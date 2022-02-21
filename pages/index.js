@@ -7,8 +7,8 @@ export default function Home() {
   return (
     <Layout>
   
-        <div className='bg-blue-100'>
-          <img className='mx-auto' src="/Index/Banner.png"/>
+        <div className='bg-blue-100 py-2'>
+          <img className=' mx-auto' src="/Index/Banner.png"/>
         </div>
 
     </Layout>
