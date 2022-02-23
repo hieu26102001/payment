@@ -54,7 +54,8 @@ export default function Footer() {
 
                 </div>
             </div>
-
+            
+        {/* mobile */}
             <div className="md:hidden">
                 <div className="col-span-4 mb-4 ">
                     <div className=" mb-6">
