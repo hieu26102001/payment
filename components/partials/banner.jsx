@@ -3,7 +3,7 @@ export default function Banner() {
   return (
     <div className=" mx-auto bg-[#D6EBFF]">
       <div className="top-28 ml-16 absolute ">
-        <h1 className="text-2xl md:text-[64px] font-bold text-[#2F88FF] md:w-[600px] w-[240px] mb-4 font-serif">
+        <h1 className="text-2xl md:text-[64px] font-bold text-[#2F88FF] md:w-[600px] w-[240px] mb-4 font-serif leading-normal">
           Electronic payment solution in Viet Nam
         </h1>
         <p className="text-[#2F88FF] mb-4 font-serif w-[200px] md:w-[380px]">

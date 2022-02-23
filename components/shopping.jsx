@@ -9,7 +9,7 @@ export default function Shopping() {
           MUA SẮM
         </h1>
       </div>
-      <div className="grid md:grid-cols-4 mx-20 gap-1 grid-cols-2 justify-items-center mb-[116px]">
+      <div className="grid md:grid-cols-4 md:mx-20 mx-4 gap-1 grid-cols-2 justify-items-center mb-[116px]">
         {shop.map((item) => {
           return (
             <div className="py-10">

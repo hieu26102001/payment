@@ -10,8 +10,10 @@ export default function Intro() {
       </div>
       <div className="justify-center">
         {intro.map((item, index) => {
+          let a = "flex"
+          
           return (
-            index === 1 && (
+            (
               <div className="grid md:grid-cols-5 my-10 grid-flow-row-dense">
                 <div className="col-span-3 ml-11">
                   <img src={item.image} />
@@ -20,7 +22,7 @@ export default function Intro() {
                   <h1 className="font-bold font-serif text-5xl mb-10">
                     {item.title}
                   </h1>
-                  <p className=" text-[#717171] font-serif text-2xl">
+                  <p className= "text-[#717171] font-serif text-2xl">
                     {item.decription}
                   </p>
                   <button className="md:w-40 w-full mt-10 h-[61px] rounded-md text-lg text-bold font-Notosans bg-[#F3C219] text-white ">
