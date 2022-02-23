@@ -44,7 +44,7 @@ a {
 
 .swiper-slide img {
   display: block;
-  width: 100%;
+  width: 80%;
   height: 100%;
   object-fit: cover;
 }
