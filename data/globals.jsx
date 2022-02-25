@@ -63,6 +63,7 @@ export const blog = [
     decription:
       "Shop and pay with crypto anywhere in the world The Binance Card does everything a regular payment card does, and more.",
   },
+  
 ];
 export const shop = [
   {

@@ -1,8 +1,8 @@
 import Link from "next/link";
 export default function Banner() {
   return (
-    <div className=" mx-auto bg-[#D6EBFF] flex ">
-      <div className="top-28 ml-16 md:absolute  ">
+    <div className=" mx-auto bg-[#D6EBFF]  ">
+      <div className="md:top-28 md:ml-16 absolute pt-20  ">
         <h1 className="text-2xl md:text-[64px] font-bold text-[#2F88FF] md:w-[600px] w-[240px] mb-4 font-serif leading-normal">
           Electronic payment solution in Viet Nam
         </h1>
@@ -12,22 +12,24 @@ export default function Banner() {
           partners.
         </p>
         <Link href="/store">
-          <button className="md:block hidden uppercase font-bold rounded-md w-[351px] h-[61px] text-white bg-blue-500 text-lg">
+          <button className="md:block hidden uppercase font-bold rounded-md w-[351px] h-[61px] text-white bg-blue-500 text-lg hover:bg-blue-700">
             {" "}
             Shopping Now{" "}
           </button>
         </Link>
         <Link href="/store">
-        <button className = "font-bold text-white rounded-md w-[130px] h-[44px] md:hidden bg-blue-500"> SHOP NOW </button>
+        <button className = "font-bold text-white rounded-lg w-[130px] h-[44px] md:hidden bg-blue-500 hover:bg-blue-700 "> SHOP NOW </button>
         </Link>
       </div>
-      <img className="pt-10 md:ml-96 bg-[#D6EBFF]" src="../Index/Banner.png" />
-      {/* <div>
-        <img src= "../Index/imagebanner1.png" />
-        <img src= "../Index/imagebanner2.png" />
+      <img className="md:block hidden pt-10 md:ml-96 bg-[#D6EBFF]" src="../Index/Banner.png" />
+       <div className="md:hidden">
+       <img className = ""  src= "../Index/imagebanner2.png" />
+       <img src= "../Index/imagebanner3.png"/>
+        <img className = " " src= "../Index/imagebanner1.png" />
+        {/* <img src= "../Index/imagebanner2.png" />
         <img src= "../Index/imagebanner3.png" />
-        <img src= "../Index/imagebanner4.png" />
-      </div> */}
+        <img src= "../Index/imagebanner4.png" /> */}
+      </div> 
     </div>
   );
 }
