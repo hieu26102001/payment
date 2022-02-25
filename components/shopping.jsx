@@ -3,9 +3,9 @@ import { shop } from "../data/globals";
 export default function Shopping() {
   return (
     <div>
-      <div className="text-center my-10">
-        <span className="h-4 w-32 bg-[#F3C219] absolute mr-3 "> </span>
-        <h1 className=" text-center relative text-5xl font-extrabold">
+      <div className="text-center my-10 relative">
+        <h1 className="z-10 text-center md:text-5xl text-2xl leading-8 font-extrabold">
+        <span className="md:h-4 md:w-32 w-[67px] h-3 bg-[#F3C219] absolute md:top-4 top-3 -z-10 "> </span>
           MUA SẮM
         </h1>
       </div>
@@ -14,7 +14,7 @@ export default function Shopping() {
           return (
             <div className="py-10">
               <img src={item.image} />
-              <h1 className = " mt-4 text-2xl font-bold font-Notosans"> {item.name}</h1>
+              <h1 className = " mt-4 md:text-2xl text-lg font-bold font-Notosans text-[#1E2329]"> {item.name}</h1>
             </div>
           );
         })}
