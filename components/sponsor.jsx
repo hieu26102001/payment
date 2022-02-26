@@ -2,11 +2,11 @@ import { sponsor } from "../data/globals"
 export default function Sponsor() {
 
     return (
-        <div className = "grid grid-cols-4 justify-items-center my-14 md:w-[] md:h-[]  ">
+        <div className = " grid grid-cols-4  md:gap-0 gap-8 justify-items-center my-14 mx-6 md:mx-16 ">
             { sponsor.map( item => {
                 return(
                    <div>
-                       <img className = "justify-center" src= {item} />
+                       <img  src= {item} />
                        </div> 
                     )
             })
