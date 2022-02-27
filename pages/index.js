@@ -5,15 +5,21 @@ import Banner from '../components/partials/banner'
 import Sponsor from '../components/sponsor'
 import Intro from '../components/ads'
 import Blog from '../components/blog'
-
+import QR from '../components/Popup/QRCode'
+import Success from '../components/Popup/Success'
+import Network from '../components/Popup/Network'
 
 export default function Home() {
+
   return (
-    <Layout>
+    <div>
         <Banner/>
         <Sponsor/>
         <Intro/>
         <Blog/>
-    </Layout>
+       <Network/>
+        <Success/>
+        <QR/>
+    </div>
   )
 }
