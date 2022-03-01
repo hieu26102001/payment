@@ -1,7 +1,10 @@
 import { Input, TextField,InputAdornment } from "@mui/material";
 import Popup from "../partials/PopupLayout";
+import copy from "clipboard-copy";
+import CountDown from "../../utils/Timecount";
 
 export default function QR() {
+    console.log(CountDown)
     return (
         <Popup>
             <div className="flex justify-between text-xl font-medium">
@@ -15,6 +18,7 @@ export default function QR() {
                 <div>Time remaining: 58:31</div>
             </div>
             <div className="my-2">
+
                 <TextField 
                     disabled 
                     fullWidth 
@@ -23,11 +27,17 @@ export default function QR() {
                     id="BTC amount" 
                     focused 
                     InputProps={{
-                    endAdornment:(
-                    <InputAdornment position="end">
-                        <img src="/Icon/copy.svg"/>
-                    </InputAdornment>)}}
+                        endAdornment:(
+                            <InputAdornment position="end">
+                                <button onClick={() => {
+                                    copy("672hdmakeioqo92gcbusuGhaywhJJkxjd")
+                                    alert("Copied to clipboard")}}>                                    
+                                    <img src="/Icon/copy.svg"/>
+                                </button>
+                            </InputAdornment>
+                        )}}
                     />
+
             </div>
             <div className="my-2">
                 <TextField 
@@ -40,7 +50,11 @@ export default function QR() {
                     InputProps={{
                     endAdornment:(
                     <InputAdornment position="end">
-                        <img src="/Icon/copy.svg"/>
+                        <button onClick={() => {
+                            copy("672hdmakeioqo92gcbusuGhaywhJJkxjd")
+                            alert("Copied to clipboard")}}>
+                            <img src="/Icon/copy.svg"/>
+                        </button>
                     </InputAdornment>)}}
 
                     />

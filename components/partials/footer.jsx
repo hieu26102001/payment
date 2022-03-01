@@ -1,6 +1,7 @@
 import { Disclosure } from "@headlessui/react"
 import { useState } from "react"
 import { FooterNavigation, Media } from "../../data/globals"
+import {ChevronDownIcon} from '@heroicons/react/solid'
 
 export default function Footer() {
     const { Active, setActive } = useState(0)
@@ -68,7 +69,7 @@ export default function Footer() {
                         <div className="my-3">
                             <Disclosure.Button className="flex justify-between w-full">
                                 <h4 className="text-sm font-semibold" >About us</h4>
-                                <div className="font-semibold text-sm">{open ? "-" : "+"}</div>
+                                <ChevronDownIcon width={16} className={`${open?"":"rotate-90"}`}/>
                             </Disclosure.Button>
                             <Disclosure.Panel>
                                 <ul className="space-y-2 py-4">
@@ -90,8 +91,7 @@ export default function Footer() {
                         <div className="my-3">
                             <Disclosure.Button className="flex justify-between w-full">
                                 <h4 className="text-sm font-semibold">Service</h4>
-                                <div className="font-semibold text-sm">{open ? "-" : "+"}</div>
-                            </Disclosure.Button>
+                                <ChevronDownIcon width={16} className={`${open?"":"rotate-90"}`}/>                            </Disclosure.Button>
                             <Disclosure.Panel>
                                 <ul className="space-y-2 py-4">
                                     {FooterNavigation["Service"].map((item) => (
@@ -112,8 +112,7 @@ export default function Footer() {
                         <div className="my-3">
                             <Disclosure.Button className="flex justify-between w-full">
                                 <h4 className="text-sm font-semibold">Support</h4>
-                                <div className="font-semibold text-sm">{open ? "-" : "+"}</div>
-                            </Disclosure.Button>
+                                <ChevronDownIcon width={16} className={`${open?"":"rotate-90"}`}/>                            </Disclosure.Button>
                             <Disclosure.Panel>
                                 <ul className="space-y-2 py-4">
                                     {FooterNavigation["Support"].map((item) => (

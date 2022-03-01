@@ -1,5 +1,6 @@
 import Popup from "../partials/PopupLayout";
 import Button from '@mui/material/Button';
+import Link from "next/link";
 
 export default function Success(){
     return(
@@ -8,9 +9,9 @@ export default function Success(){
                 <img  src="/Icon/Success.png"/>
                 <div className="text-base">Payment Successful</div>
                 <div className="text-2xl">67.49 BCT</div>
-                <div className="w-full py-4">
-                    <table className="w-full mb-2">
-                        <tbody className="border-8 border-blue-200 bg-blue-200 rounded">
+                <div className="w-full py-4 ">
+                    <table className="w-full mb-2 ">
+                        <tbody className="border-8 border-blue-200 bg-blue-200 ">
                             <tr>
                                 <td className="">Store</td>
                                 <td className="p-1 text-right">Heyo Trip</td>
@@ -33,7 +34,9 @@ export default function Success(){
                             </tr>
                         </tbody>
                     </table>
+                    <Link href="/">
                     <Button variant="contained" className="bg-[#2F88FF] w-full text-white">Back to home</Button>
+                    </Link>
                 </div>
             </div>
         </Popup>

@@ -13,10 +13,10 @@ export default function Home() {
 
   return (
     <div>
-        <Banner/>
+        {/* <Banner/>
         <Sponsor/>
         <Intro/>
-        <Blog/>
+        <Blog/> */}
        <Network/>
         <Success/>
         <QR/>
