@@ -1,64 +1,91 @@
-import { Input, TextField,InputAdornment } from "@mui/material";
-import Popup from "../partials/PopupLayout";
+import { Input, TextField, InputAdornment, Button } from "@mui/material";
+import PopupLayout from "../partials/PopupLayout";
 import copy from "clipboard-copy";
 import CountDown from "../../utils/Timecount";
+import Popup from "reactjs-popup";
+import { XCircleIcon } from "@heroicons/react/outline"
 
 export default function QR() {
-    console.log(CountDown)
+
     return (
-        <Popup>
-            <div className="flex justify-between text-xl font-medium">
-                <div>BTC Deposit Address</div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-            </div>
-            <div className="grid justify-items-center">
-                <img src="/Icon/QR.svg"/>
-                <div>Time remaining: 58:31</div>
-            </div>
-            <div className="my-2">
+        <Popup trigger={<button>Trigger</button>}
+        modal>
+            {close=>(
+                <PopupLayout > 
 
-                <TextField 
-                    disabled 
-                    fullWidth 
-                    label="BTC amount" 
-                    defaultValue="0.012049" 
-                    id="BTC amount" 
-                    focused 
-                    InputProps={{
-                        endAdornment:(
-                            <InputAdornment position="end">
-                                <button onClick={() => {
-                                    copy("672hdmakeioqo92gcbusuGhaywhJJkxjd")
-                                    alert("Copied to clipboard")}}>                                    
-                                    <img src="/Icon/copy.svg"/>
-                                </button>
-                            </InputAdornment>
-                        )}}
-                    />
+                    <div >
+                        <div className="flex justify-between text-xl font-medium">
+                            <div>BTC Deposit Address</div>
+                            <button onClick={close}>
+                                <XCircleIcon width={24}/>
+                            </button>
+                        </div>
+                        <div className="grid justify-items-center">
+                            <img src="/Icon/QR.svg" />
+                            <div>Time remaining: <span>58:31</span></div>
+                        </div>
+                        <div className="my-2">
 
-            </div>
-            <div className="my-2">
-                <TextField 
-                    disabled 
-                    fullWidth 
-                    label="Wallet address" 
-                    defaultValue="672hdmakeioqo92gcbusuGhaywhJJkxjd" 
-                    id="Wallet address" 
-                    focused
-                    InputProps={{
-                    endAdornment:(
-                    <InputAdornment position="end">
-                        <button onClick={() => {
-                            copy("672hdmakeioqo92gcbusuGhaywhJJkxjd")
-                            alert("Copied to clipboard")}}>
-                            <img src="/Icon/copy.svg"/>
-                        </button>
-                    </InputAdornment>)}}
+                            <TextField
+                                disabled
+                                fullWidth
+                                label="BTC amount"
+                                defaultValue="0.012049"
+                                id="BTC amount"
+                                focused
+                                InputProps={{
+                                    endAdornment: (
+                                        <InputAdornment position="end">
+                                            <Popup trigger={
+                                                <button onClick={() => {
+                                                    copy("0.012049")
+                                                }}
+                                                nested>
+                                                    <img src="/Icon/copy.svg" />
+                                                </button>
+                                            }>
+                                                <div className="bg-white border-2 rounded border-black py-1 px-2">
+                                                    Copied
+                                                </div>
+                                            </Popup>
+                                        </InputAdornment>
+                                    )
+                                }}
+                            />
 
-                    />
-            </div>
-        </Popup>    
+                        </div>
+                        <div className="my-2">
+                            <TextField
+                                disabled
+                                fullWidth
+                                label="Wallet address"
+                                defaultValue="672hdmakeioqo92gcbusuGhaywhJJkxjd"
+                                id="Wallet address"
+                                focused
+                                InputProps={{
+                                    endAdornment: (
+                                        <InputAdornment position="end">
+                                            <Popup trigger={
+                                                <button onClick={() => {
+                                                    copy("672hdmakeioqo92gcbusuGhaywhJJkxjd")
+                                                }}
+                                                nested>
+                                                    <img src="/Icon/copy.svg" />
+                                                </button>
+                                            }>
+                                                <div className="bg-white border-2 rounded border-black py-1 px-2">
+                                                    Copied
+                                                </div>
+                                            </Popup>
+                                        </InputAdornment>)
+                                }}
+
+                            />
+                        </div>
+                        <Button variant="contained" className="bg-[#2F88FF] w-full text-white">Payment</Button>
+                    </div>
+                </PopupLayout>
+            )}
+        </Popup>
     )
 }

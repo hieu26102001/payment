@@ -8,6 +8,7 @@ import Blog from '../components/blog'
 import QR from '../components/Popup/QRCode'
 import Success from '../components/Popup/Success'
 import Network from '../components/Popup/Network'
+import Popup from 'reactjs-popup'
 
 export default function Home() {
 
@@ -18,8 +19,8 @@ export default function Home() {
         <Intro/>
         <Blog/> */}
        <Network/>
-        <Success/>
-        <QR/>
+        {/* <Success/> */}
+           <QR/>
     </div>
   )
 }
