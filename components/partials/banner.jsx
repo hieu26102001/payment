@@ -21,8 +21,8 @@ export default function Banner() {
         <button className = "font-bold text-white rounded-lg w-[130px] h-[44px] md:hidden bg-blue-500 hover:bg-blue-700 "> SHOP NOW </button>
         </Link>
       </div>
-      <img className="md:block hidden pt-10 md:ml-96 bg-[#D6EBFF] " src="../Index/Banner.png" />
-       <div className="md:hidden pt-6 pl-44">
+      <img className="sm:block hidden pt-10 md:ml-96 bg-[#D6EBFF] " src="../Index/Banner.png" />
+       <div className="sm:hidden pt-6 pl-44 justify-end">
        <img className = " h-[86px] w-[86px]"  src= "../Index/banner2.png" />
        <img className = "h-[66px] w-[66px] ml-24 mt-2 absolute top-16 right-3" src="../Index/banner3.png"/>
         <img className = "mt-9" src= "../Index/banner1.png" />
