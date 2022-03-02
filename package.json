@@ -8,11 +8,17 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.8.1",
+    "@emotion/styled": "^11.8.1",
     "@headlessui/react": "^1.5.0",
+    "@heroicons/react": "^1.0.5",
+    "@mui/material": "^5.4.3",
+    "clipboard-copy": "^4.0.1",
     "heroicons": "^1.0.5",
     "next": "^12.1.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "reactjs-popup": "^2.0.5",
     "recoil": "^0.6.1",
     "swiper": "^8.0.6"
   },

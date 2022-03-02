@@ -5,15 +5,22 @@ import Banner from '../components/partials/banner'
 import Sponsor from '../components/sponsor'
 import Intro from '../components/ads'
 import Blog from '../components/blog'
-
+import QR from '../components/Popup/QRCode'
+import Success from '../components/Popup/Success'
+import Network from '../components/Popup/Network'
+import Popup from 'reactjs-popup'
 
 export default function Home() {
+
   return (
-    <Layout>
-        <Banner/>
+    <div>
+        {/* <Banner/>
         <Sponsor/>
         <Intro/>
-        <Blog/>
-    </Layout>
+        <Blog/> */}
+       <Network/>
+        {/* <Success/> */}
+           <QR/>
+    </div>
   )
 }
