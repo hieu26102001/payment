@@ -8,15 +8,12 @@ import { XCircleIcon } from "@heroicons/react/outline"
 export default function QR() {
 
     return (
-        <Popup trigger={<button>Trigger</button>}
-        modal>
-            {close=>(
                 <PopupLayout > 
 
                     <div >
                         <div className="flex justify-between text-xl font-medium">
                             <div>BTC Deposit Address</div>
-                            <button onClick={close}>
+                            <button>
                                 <XCircleIcon width={24}/>
                             </button>
                         </div>
@@ -85,7 +82,6 @@ export default function QR() {
                         <Button variant="contained" className="bg-[#2F88FF] w-full text-white">Payment</Button>
                     </div>
                 </PopupLayout>
-            )}
-        </Popup>
+
     )
 }
