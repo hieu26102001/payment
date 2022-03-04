@@ -14,13 +14,13 @@ export default function Home() {
 
   return (
     <div>
-        {/* <Banner/>
+        <Banner/>
         <Sponsor/>
         <Intro/>
-        <Blog/> */}
-       <Network/>
-        {/* <Success/> */}
-           <QR/>
+        <Blog/>
+       {/* <Network/>
+        <Success/>
+           <QR/> */}
     </div>
   )
 }

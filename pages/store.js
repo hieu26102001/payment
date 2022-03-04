@@ -6,10 +6,8 @@ import Shopping from "../components/shopping";
 export default function Store() {
   return (
     <div>
-      <Header />
       <BannerStore/>
       <Shopping />
-      <Footer/>
     </div>
   );
 }
