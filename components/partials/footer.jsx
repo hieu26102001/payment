@@ -7,7 +7,7 @@ export default function Footer() {
     const { Active, setActive } = useState(0)
 
     return (
-        <footer className="mx-auto h-80 px-[20px] absolute my-8">
+        <footer className="mx-auto h-80 px-24 relative  pt-8 mt-20 max-w-[1600px] bg-transparent">
             <div className="hidden md:grid grid-cols-12 gap-16 ">
                 <div className="col-span-4 space-y-2 ">
                     <div className=" mb-6">

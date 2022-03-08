@@ -2,7 +2,7 @@ import { shop } from "../data/globals";
 
 export default function Shopping() {
   return (
-    <div>
+    <div className="max-w-[1600px] mx-auto" >
       <div className="text-center my-10 relative">
         <h1 className="z-10 text-center md:text-5xl text-2xl leading-8 font-extrabold">
         <span className="md:h-4 md:w-32 w-[67px] h-3 bg-[#F3C219] absolute md:top-4 top-3 -z-10 "> </span>

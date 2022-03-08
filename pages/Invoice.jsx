@@ -11,6 +11,7 @@ import BillingSummary from "../components/Invoice/BillingSummary";
 import { useRef, useState, useEffect } from "react";
 import useWindowSize from "../hooks/useWindowSize";
 import Responsive from "../components/Responsive";
+import Network from "../components/Popup/Network";
 const coinData = [
   {
     icon: "/Icon/Bitcoin (BTC).svg",
@@ -102,7 +103,7 @@ export default function Invoice() {
   const [coinUnit, setCoinUnit] = useState();
   const [payCoin, setPayCoin] = useState();
   const [openNetwork, setOpenNetwork] = useState(false)
-  const [openPayMethod,setOpenPayMethod] = useState(false)
+  const [openPayMethod, setOpenPayMethod] = useState(false)
   const handleOpenDialog = (setOpen) => {
     setOpen(true)
   }
@@ -114,13 +115,13 @@ export default function Invoice() {
   useEffect(() => {
     setPayCoin(coinData.find((c) => c.unit === coinUnit));
   }, [coinUnit]);
-  useEffect(()=>{
-    size.width>=768? setOpenPayMethod(true):null
+  useEffect(() => {
+    size.width >= 768 ? setOpenPayMethod(true) : null
     console.log(openPayMethod)
-  },[size.width])
+  }, [size.width])
   return (
-    <section className="bg-[#E5E5E5] py-9 md:px-2">
-      <div className="grid md:grid-cols-5 gap-11 m-auto max-w-6xl">
+    <section className="py-9 md:px-2">
+      <div className="grid md:grid-cols-5 gap-11 m-auto max-w-[986px]">
         <div className="md:col-span-3 flex flex-col gap-5">
           <Responsive
             Computer={<Box label="contact name" className="p-5" labelClass="mb-8" />}
@@ -135,7 +136,7 @@ export default function Invoice() {
               <InputPayment label="Email Address" Validate={validEmail} />
               <InputPayment label="Street Address" Validate={validInput} />
               <div className="grid md:grid-cols-2 gap-4">
-                <InputPayment label="State/Province" Validate={validInput} selectInput={["Viet Nam","Japan","Korea"]}/>                  
+                <InputPayment label="State/Province" Validate={validInput} selectInput={["Viet Nam", "Japan", "Korea"]} />
                 <InputPayment label="City" Validate={validInput} />
               </div>
               <div className="grid md:grid-cols-2 gap-4">
@@ -148,15 +149,20 @@ export default function Invoice() {
               />
             </form>
           </Responsive>
-
-          <div onClick={() => size.width>=768?handleOpenDialog(setOpenNetwork):null} >
-            <AccordionPayment
-              expendable={size.width >= 768 ? false : true}
-              label="select network"
-              subtext="Binance Chain"
-            />
-
+          {/* SELECT NETWORK */}
+          <div onClick={() => size.width >= 768 ? handleOpenDialog(setOpenNetwork) : null} >
+            <Box>
+              <AccordionPayment
+                expendable={size.width >= 768 ? false : true}
+                label="select network"
+                subtext="Binance Chain"
+              />
+            </Box>
           </div>
+          <Dialog open={size.width >= 768 ? openNetwork : false}  >
+            <Network/>
+            <button onClick={() => handleCloseDialog(setOpenNetwork)} >cancel</button>
+          </Dialog>
           <div>
             <Responsive
               Computer={<Box label="payment method" labelClass="pt-5" className="p-5 flex flex-col gap-7" />}
@@ -191,12 +197,8 @@ export default function Invoice() {
                 </RadioGroup>
               </FormControl>
             </Responsive>
-            <Dialog open={size.width>=768?openNetwork:false}  >
-              <Box className="p-5" />
-              <button onClick={() => handleCloseDialog(setOpenNetwork)} >cancel</button>
-            </Dialog>
           </div>
-          
+
           {payMethod === "crypto" && openPayMethod && (
             <Box className="p-5">
               <RadioGroup

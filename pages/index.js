@@ -15,9 +15,11 @@ export default function Home() {
   return (
     <div>
         <Banner/>
-        <Sponsor/>
-        <Intro/>
-        <Blog/>
+        <div className='max-w-[1600px] mx-auto' >
+          <Sponsor/>
+          <Intro/>
+          <Blog/>
+        </div>
        {/* <Network/>
         <Success/>
            <QR/> */}
