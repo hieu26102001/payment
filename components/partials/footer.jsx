@@ -16,7 +16,6 @@ export default function Footer() {
                         </div>
                         <p className="text-justify font-normal text-xs leading-normal text-[#717171]">With Payment, we are bringing your favorite business to your Binance app. Go to Binance Marketplace with your existing Binance account and make a payment using Payment. Spending cryptocurrency has become a lot easier.</p>
                     </div>
-
                     <div className="md:flex mt-4 md:mt-0 col-span-6 md:space-x-2 space-y-4 md:space-y-0 justify-between">
                         <div className="space-y-3 md:w-28">
                             <h4 className="text-sm font-medium  mb-4">About us</h4>

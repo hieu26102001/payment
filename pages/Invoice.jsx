@@ -150,19 +150,20 @@ export default function Invoice() {
             </form>
           </Responsive>
           {/* SELECT NETWORK */}
-          <div onClick={() => size.width >= 768 ? handleOpenDialog(setOpenNetwork) : null} >
+          <div>
             <Box>
               <AccordionPayment
-                expendable={size.width >= 768 ? false : true}
                 label="select network"
                 subtext="Binance Chain"
-              />
+              >
+                <Network/>
+              </AccordionPayment>
             </Box>
           </div>
-          <Dialog open={size.width >= 768 ? openNetwork : false}  >
+          {/* <Dialog open={size.width >= 768 ? openNetwork : false}  >
             <Network/>
             <button onClick={() => handleCloseDialog(setOpenNetwork)} >cancel</button>
-          </Dialog>
+          </Dialog> */}
           <div>
             <Responsive
               Computer={<Box label="payment method" labelClass="pt-5" className="p-5 flex flex-col gap-7" />}
