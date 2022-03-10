@@ -121,7 +121,7 @@ export default function Invoice() {
   }, [size.width])
   return (
     <section className="py-9 md:px-2">
-      <div className="grid md:grid-cols-5 gap-11 m-auto max-w-[986px]">
+      <div className="flex flex-col md:grid md:grid-cols-5 gap-5 md:gap-11 m-auto max-w-[986px]">
         <div className="md:col-span-3 flex flex-col gap-5">
           <Responsive
             Computer={<Box label="contact name" className="p-5" labelClass="mb-8" />}

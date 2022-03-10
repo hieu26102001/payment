@@ -1,3 +1,4 @@
+const defaultTheme = require('tailwindcss/defaultTheme')
 module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
@@ -9,6 +10,10 @@ module.exports = {
         "Roboto":['Roboto', 'sans-serif'],
         "Notosans":['Noto Sans JP', 'sans-serif'],
       }
+    },
+    screens: {
+      'xs': '360px',
+      ...defaultTheme.screens,
     },
   },
   plugins: [],

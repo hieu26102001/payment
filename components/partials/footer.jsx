@@ -7,7 +7,7 @@ export default function Footer() {
     const { Active, setActive } = useState(0)
 
     return (
-        <footer className="mx-auto md:px-24 ml-4  pt-8 mt-20  bg-transparent">
+        <footer className="mx-auto md:px-24 px-4 pb-20 md:pb-0 pt-8 mt-20  bg-transparent">
             <div className="max-w-[1600px] relative h-80 mx-auto">
                 <div className="hidden md:grid grid-cols-12 gap-16 ">
                     <div className="col-span-4 space-y-2 ">
@@ -132,7 +132,7 @@ export default function Footer() {
                     </Disclosure>
                 </div>
 
-                <div className="space-y-4 mt-4 pb-20 md:pb-0">
+                <div className="space-y-4 mt-4 md:pb-0">
                     <h4 className="md:hidden font-semibold">Community</h4>
                     <div className="flex space-x-4">
                         {Media.map((item) => (
