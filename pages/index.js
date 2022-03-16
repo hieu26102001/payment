@@ -13,16 +13,16 @@ import Popup from 'reactjs-popup'
 export default function Home() {
 
   return (
-    <div>
+    <Layout>
         <Banner/>
         <div className='max-w-[1600px] mx-auto' >
           <Sponsor/>
           <Intro/>
           <Blog/>
         </div>
-       {/* <Network/>
+       <Network/>
         <Success/>
-           <QR/> */}
-    </div>
+           <QR/>
+    </Layout>
   )
 }
