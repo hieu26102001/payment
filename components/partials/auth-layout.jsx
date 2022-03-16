@@ -3,14 +3,14 @@ import Text from "../auth/text";
 import Header from "./header";
 
 export default function Authlayout({children}){
-    const [style,setStyle]= useState({ opacity : "0",position : "absolute"})
+    const [style,setStyle]= useState({ bg:"bg-[rgba(255,255,255,0)]",position : "absolute"})
     const bgimage = "/Auth/bg-image.png"
  return(
      <div className="mx-auto">
 
         <div className="md:flex max-w-[1600px]">
             <div className="hidden lg:flex w-1/2 text-black items-center relative ">
-                <Header styleCustom={style} />
+                <Header styleCustom={style} colorLogo="#FFF"/>
                 <div className="absolute top-[26rem] ">
                 <Text/>
                 </div>
