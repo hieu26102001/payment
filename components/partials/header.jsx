@@ -7,8 +7,11 @@ export default function Header({styleCustom}) {
     return (
         <header className={`${bg} w-full md:px-[20px] pl-4 ${position} top-0 py-[24px] z-50`}>
             <div className="max-w-[1600px] mx-auto" >
-                <img src="/LOGO PAYMENT.png" />
+                <div className="flex w-1/3  justify-between">
+                    <img src="/Logo.svg" />
+                </div>
             </div>
+            
         </header>
     )
 
