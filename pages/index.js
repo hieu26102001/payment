@@ -19,10 +19,7 @@ export default function Home() {
           <Sponsor/>
           <Intro/>
           <Blog/>
-        </div>
-       <Network/>
-        <Success/>
-           <QR/>
+        </div>  
     </Layout>
   )
 }
