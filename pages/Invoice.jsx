@@ -162,53 +162,11 @@ export default function Invoice() {
                 </AccordionPayment>
               </Box>
             </div>
-            {/* <Dialog open={size.width >= 768 ? openNetwork : false}  >
-            <Network/>
-            <button onClick={() => handleCloseDialog(setOpenNetwork)} >cancel</button>
-          </Dialog> */}
             <div>
-              <Responsive
-                Computer={<Box label="contact name" className="p-5" labelClass="mb-8" />}
-                Mobile={<AccordionPayment label="contact name" ></AccordionPayment>}
-                sizeWindow={size}
-              >
-                <form action="">
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <InputPayment label="First Name" Validate={validInput} />
-                    <InputPayment label="Last Name" Validate={validInput} />
-                  </div>
-                  <InputPayment label="Email Address" Validate={validEmail} />
-                  <InputPayment label="Street Address" Validate={validInput} />
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <InputPayment label="State/Province" Validate={validInput} selectInput={["Viet Nam", "Japan", "Korea"]} />
-                    <InputPayment label="City" Validate={validInput} />
-                  </div>
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <InputPayment label="Zip/Postal Code" Validate={validInput} type="number" />
-                    <InputPayment label="Phone" Validate={validPhone} type="number" />
-                  </div>
-                  <FormControlLabel
-                    control={<Checkbox defaultChecked />}
-                    label="Additional Request (Optional)"
-                  />
-                </form>
-              </Responsive>
-              {/* SELECT NETWORK */}
-              <div onClick={() => size.width >= 768 ? handleOpenDialog(setOpenNetwork) : null} >
-                <Box>
-                  <AccordionPayment
-                    expendable={size.width >= 768 ? false : true}
-                    label="select network"
-                    subtext="Binance Chain"
-                  />
-                </Box>
-              </div>
               <Dialog open={size.width >= 768 ? openNetwork : false}  >
                 <Network />
                 <button onClick={() => handleCloseDialog(setOpenNetwork)} >cancel</button>
               </Dialog>
-              {/* <Network /> */}
-              {/* PAYMENT METHOD */}
               <div>
                 <Responsive
                   Computer={<Box label="payment method" labelClass="pt-5" className="p-5 flex flex-col gap-7" />}
