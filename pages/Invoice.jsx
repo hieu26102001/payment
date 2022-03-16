@@ -207,7 +207,7 @@ export default function Invoice() {
                 <Network />
                 <button onClick={() => handleCloseDialog(setOpenNetwork)} >cancel</button>
               </Dialog>
-              <Network />
+              {/* <Network /> */}
               {/* PAYMENT METHOD */}
               <div>
                 <Responsive
