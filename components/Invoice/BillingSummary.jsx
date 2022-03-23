@@ -11,7 +11,7 @@ import {
 } from "@mui/material";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import clsx from "clsx";
-import Box from "./Box";
+import Box from "../partials/Box";
 
 export default function BillingDetail() {
   const Info = ({ header, value, unit, className }) => {

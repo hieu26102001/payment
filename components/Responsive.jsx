@@ -1,5 +1,5 @@
 import useWindowSize from "../hooks/useWindowSize"
-import Box from "./Invoice/Box"
+import Box from "./partials/Box"
 import { cloneElement } from "react"
 
 export default function Responsive({ Computer, Mobile, children,sizeWindow }) {
