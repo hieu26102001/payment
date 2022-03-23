@@ -8,7 +8,7 @@ export default function Footer() {
     const { Active, setActive } = useState(0)
 
     return (
-        <footer className="mx-auto md:px-24 px-4 pb-20 md:pb-0 my-8 border-t-2 border-gray-300  bg-transparent">
+        <footer className="mx-auto md:px-24 px-4 pb-20 md:py-8 mt-8 border-t-2 border-gray-300  bg-transparent">
             <div className="max-w-[1600px] mx-auto text-gray-400">
                 <div className="flex justify-between my-10">
                     {FooterNavigation.map((item) => {

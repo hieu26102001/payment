@@ -1,10 +1,12 @@
-import Layout from '../components/partials/layout'
-import '../styles/globals.css'
-
+import Layout from "../components/partials/layout";
+import "../styles/globals.css";
+import { RecoilRoot } from "recoil"
 function MyApp({ Component, pageProps }) {
   return (
+    <RecoilRoot>
       <Component {...pageProps} />
-  )
+    </RecoilRoot>
+  );
 }
 
-export default MyApp
+export default MyApp;

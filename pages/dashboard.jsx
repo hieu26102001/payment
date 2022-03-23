@@ -6,7 +6,7 @@ import { TextField, InputAdornment } from '@mui/material'
 export default function Dashboard() {
     return (
         <Layout>
-            <div className='max-w-[1600px] mx-auto px-5 pt-20 bg-white'>
+            <div className='max-w-[1600px] mx-auto px-5 pt-20'>
                 <div className='flex space-x-4'>
                     <div className='w-1/6'>
                         <div className="flex justify-between text-xl font-medium">

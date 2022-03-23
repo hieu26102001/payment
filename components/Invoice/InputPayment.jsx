@@ -1,6 +1,7 @@
 import {
   createTheme,
   InputAdornment,
+  InputLabel,
   MenuItem,
   TextField,
   ThemeProvider,
@@ -12,7 +13,7 @@ export default function InputPayment({ label, Validate, type = "", selectInput =
   const [inputText, setInputText] = useState();
   const [firstRender, setFirstRender] = useState(true);
   const [validInfo, setValidInfo] = useState({ error: false, helperText: " " });
-  
+
   const theme = createTheme({
     components: {
       MuiOutlinedInput: {
@@ -35,7 +36,7 @@ export default function InputPayment({ label, Validate, type = "", selectInput =
       setValidInfo(Validate(inputText));
     }
     setFirstRender(false);
-    
+
     // console.log(inputText)
   }, [inputText]);
 
@@ -43,23 +44,27 @@ export default function InputPayment({ label, Validate, type = "", selectInput =
     <div className="mb-3">
       {
         selectInput ?
-          <TextField
-            size="small"
-            select
-            label={label}
-            defaultValue={selectInput[0]}
-            fullWidth
-            InputLabelProps={{ shrink: true }}
-            onChange={(e) => setInputText(e.target.value)}
-            helperText={validInfo.helperText}
-            error={validInfo.error}
-          >
-            {selectInput.map((item,index) =>
-              <MenuItem value={item}>{item}</MenuItem>
+          <>
+            <InputLabel shrink >{label}</InputLabel>
+            <TextField
+              size="small"
+              select
+              // label={label}
+              defaultValue={selectInput[0]}
+              fullWidth
+              InputLabelProps={{ shrink: true }}
+              onChange={(e) => setInputText(e.target.value)}
+              helperText={validInfo.helperText}
+              error={validInfo.error}
+            >
+              {selectInput.map((item, index) =>
+                <MenuItem value={item}>{item}</MenuItem>
               )}
-          </TextField>
+            </TextField>
+          </>
           :
           <ThemeProvider theme={theme}>
+            <InputLabel shrink >{label}</InputLabel>
             <TextField
               fullWidth
               size="small"
@@ -67,7 +72,7 @@ export default function InputPayment({ label, Validate, type = "", selectInput =
               helperText={validInfo.helperText}
               error={validInfo.error}
               onBlur={(e) => setInputText(e.target.value)}
-              label={label}
+              // label={label}
               InputLabelProps={{ shrink: true, focused: false }}
               InputProps={{
                 endAdornment: !validInfo.error ? (

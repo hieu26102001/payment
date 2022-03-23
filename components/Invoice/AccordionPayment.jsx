@@ -1,6 +1,5 @@
 import { Accordion, AccordionDetails, AccordionSummary, createTheme, ThemeProvider, Typography } from "@mui/material";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
-import Box from "../partials/Box";
 import clsx from "clsx";
 import { useEffect, useState } from "react";
 export default function AccordionPayment({labelClass, label, subtext, children, expendable = true, controller}) {
