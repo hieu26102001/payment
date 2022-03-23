@@ -7,6 +7,7 @@ import Typography from '@mui/material/Typography';
 import FiatSpot from "../components/Wallet/FiatSpot"
 import History from "../components/Wallet/History"
 import { createTheme, ThemeProvider } from "@mui/material";
+import Layout from "../components/partials/layout";
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -20,7 +21,7 @@ function TabPanel(props) {
     >
       {value === index && (
         // <Box sx={{ p: 3 }}>
-          <Typography>{children}</Typography>
+        <Typography>{children}</Typography>
         // </Box>
       )}
     </div>
@@ -61,25 +62,27 @@ export default function BasicTabs() {
     setValue(newValue);
   };
 
-  
+
 
 
   return (
-    <ThemeProvider theme={theme}>
-      <section className="bg-[#F3F5F7] pt-8 pb-20" >
-        <Box className="max-w-[1400px] mx-auto pb-10" >
+    <Layout>
+      <ThemeProvider theme={theme}>
+        <section className="bg-[#F3F5F7] pt-8 pb-20" >
+          <Box className="max-w-[1400px] mx-auto pb-10" >
             <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
               <Tab label="Fiat and Spot" {...a11yProps(0)} className="capitalize" />
               <Tab label="History" {...a11yProps(1)} className="capitalize" />
             </Tabs>
-          <TabPanel value={value} index={0}>
-            <FiatSpot/>
-          </TabPanel>
-          <TabPanel value={value} index={1}>
-            <History/>
-          </TabPanel>
-        </Box>
-      </section>
-    </ThemeProvider>
+            <TabPanel value={value} index={0}>
+              <FiatSpot />
+            </TabPanel>
+            <TabPanel value={value} index={1}>
+              <History />
+            </TabPanel>
+          </Box>
+        </section>
+      </ThemeProvider>
+    </Layout>
   );
 }

@@ -25,7 +25,7 @@ export default function Layout({ children }) {
     console.log(bgLayout)
     return (
         <div className={`font-Notosans mx-auto relative ${bgLayout}`}>
-            <Header styleCustom={style} />
+            <Header styleCustom={style} colorLogo="#2F88FF" />
             {children}
             <Footer />
         </div>
