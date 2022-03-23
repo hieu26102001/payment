@@ -5,7 +5,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import * as EmailValidator from "email-validator";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import InputPayment from "../components/Invoice/InputPayment";
-import Box from "../components/Invoice/Box";
+import Box from "../components/partials/Box";
 import AccordionPayment from "../components/Invoice/AccordionPayment";
 import BillingSummary from "../components/Invoice/BillingSummary";
 import { useRef, useState, useEffect } from "react";
