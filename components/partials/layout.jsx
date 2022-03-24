@@ -9,23 +9,23 @@ export default function Layout({ children }) {
     const router = useRouter();
     console.log(router)
     // console.log(bgLayout)
-    const [style,setStyle] = useState({bg:"bg-[rgba(255,255,255,0.25)]",position:"absolute"})
-    const [bgLayout,setBgLayout] = useState("bg-[#FFFFFF]")
-    
-    useEffect(()=>{
-        if(router.pathname==="/Invoice"){
-        setStyle({bg:"bg-[#FFFFFF]",position:"static"})
-        setBgLayout("bg-[#F6F6F6]")
+    const [style, setStyle] = useState({ bg: "bg-[rgba(255,255,255,0.25)]", position: "absolute" })
+    const [bgLayout, setBgLayout] = useState("bg-[#FFFFFF]")
+
+    useEffect(() => {
+        if (router.pathname === "/store" || router.pathname==="/") {
+            setStyle({ bg: "bg-[rgba(255,255,255,0.25)]", position: "absolute" })
+            setBgLayout("bg-[#FFFFFF]")
         }
-        else{
-        setStyle({bg:"bg-[rgba(255,255,255,0.25)]",position:"absolute"})
-        setBgLayout("bg-[#FFFFFF]")
-    }
-    },[router.pathname])
+        else {
+            setStyle({ bg: "bg-[#FFFFFF]", position: "static" })
+            setBgLayout("bg-[#F6F6F6]")
+        }
+    }, [router.pathname])
     console.log(bgLayout)
     return (
         <div className={`font-Notosans mx-auto relative ${bgLayout}`}>
-            <Header styleCustom={style} />
+            <Header styleCustom={style} colorLogo="#2F88FF" />
             {children}
             <Footer />
         </div>

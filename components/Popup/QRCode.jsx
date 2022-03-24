@@ -9,7 +9,6 @@ export default function QR() {
 
     return (
         <PopupLayout >
-
             <div >
                 <div className="flex justify-between text-xl font-medium">
                     <div>BTC Deposit Address</div>
@@ -22,7 +21,6 @@ export default function QR() {
                     <div>Time remaining: <span>58:31</span></div>
                 </div>
                 <div className="my-2">
-
                     <TextField
                         disabled
                         fullWidth

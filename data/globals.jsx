@@ -1,21 +1,50 @@
-export const FooterNavigation = {
-  "About us": [
-    { name: "Introduce" },
-    { name: "Company" },
-    { name: "Security" },
-    { name: "Service" },
-  ],
-  Service: [{ name: "Download" }, { name: "Campaign" }, { name: "Affiliate" }],
-  Support: [
-    { name: "Frequently asked questions" },
-    { name: "Support" },
-    { name: "Policy" },
-  ],
-};
+export const FooterNavigation = [
+  {
+    name:"About us",
+    link:"",
+  },
+  {
+    name:"Introduce",
+    link:"",
+  },
+  {
+    name:"Company",
+    link:"",
+  },
+  {
+    name:"Security",
+    link:"",
+  },
+  {
+    name:"Service",
+    link:"",
+  },
+  {
+    name:"Campaign",
+    link:"",
+  },
+  {
+    name:"Affiliate",
+    link:"",
+  },
+  {
+    name:"Frequently asked",
+    link:"",
+  },
+  {
+    name:"Questions",
+    link:"",
+  },
+  {
+    name:"Support",
+    link:"",
+  },
+]
 export const Media = [
   "/Footer/Facebook.svg",
-  "/Footer/Instagram.svg",
-  "/Footer/LinkIn.svg",
+  "/Footer/Youtube.svg",
+  "/Footer/Dribble.svg",
+  "/Footer/Figma.svg",
   "/Footer/Whatsapp.svg",
 ];
 export const intro = [
