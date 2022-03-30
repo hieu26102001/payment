@@ -9,7 +9,7 @@ import {
 import { useEffect, useRef, useState } from "react";
 import useWindowSize from "../../hooks/useWindowSize";
 
-export default function InputPayment({ label, Validate, type = "", selectInput = false, children }) {
+export default function InputPayment({ label, Validate, selectInput = false, children, ...props }) {
   const [inputText, setInputText] = useState();
   const [firstRender, setFirstRender] = useState(true);
   const [validInfo, setValidInfo] = useState({ error: false, helperText: " " });
@@ -39,7 +39,6 @@ export default function InputPayment({ label, Validate, type = "", selectInput =
 
     // console.log(inputText)
   }, [inputText]);
-
   return (
     <div className="mb-3">
       {
@@ -50,6 +49,7 @@ export default function InputPayment({ label, Validate, type = "", selectInput =
               size="small"
               select
               // label={label}
+              {...props}
               defaultValue={selectInput[0]}
               fullWidth
               InputLabelProps={{ shrink: true }}
@@ -68,7 +68,7 @@ export default function InputPayment({ label, Validate, type = "", selectInput =
             <TextField
               fullWidth
               size="small"
-              type={type}
+              {...props}
               helperText={validInfo.helperText}
               error={validInfo.error}
               onBlur={(e) => setInputText(e.target.value)}

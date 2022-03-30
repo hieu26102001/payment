@@ -3,6 +3,7 @@ import { useState } from "react"
 import { FooterNavigation, Media } from "../../data/globals"
 import { ChevronDownIcon } from '@heroicons/react/solid'
 import Icon from "../Icon"
+import Link from "next/link"
 
 export default function Footer() {
     const { Active, setActive } = useState(0)
@@ -18,7 +19,11 @@ export default function Footer() {
                     })}
                 </div>
                 <div className="flex justify-between items-center ">
-                    <Icon colorLogo="#2F88FF" />
+                    <Link href="/">
+                        <a>
+                            <Icon colorLogo="#2F88FF" />
+                        </a>
+                    </Link>
                     <div className="flex space-x-3 items-center">
                         {Media.map((item) => {
                             return (

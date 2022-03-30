@@ -3,8 +3,9 @@ import InputPayment from "../Invoice/InputPayment";
 import Link from "next/link"
 import { ChevronLeftIcon } from "@heroicons/react/solid";
 import {useRouter} from "next/router"
+import Alert from "../Alert";
 
-export default function Authform({ label, title,children,page }) {
+export default function Authform({ label, title,children }) {
     const router = useRouter()
 
     return (
@@ -16,11 +17,12 @@ export default function Authform({ label, title,children,page }) {
                 </button>
             </div>
             <div className="w-2/3 mx-auto items-center flex">
-                <form className="py-16 w-full">
+                <div className="py-16 w-full">
                     <h1 className="text-2xl font-bold mb-4">{label}</h1>
                     <h2 className="text-lg text-[#8692A6] border-b-2 mb-8 pb-4 border-gray-200">{title}</h2>
+                    <Alert/>
                     {children}
-                </form>
+                </div>
             </div>
         </div>
     )
