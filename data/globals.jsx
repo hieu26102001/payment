@@ -1,45 +1,45 @@
 export const FooterNavigation = [
   {
-    name:"About us",
-    link:"",
+    name: "About us",
+    link: "",
   },
   {
-    name:"Introduce",
-    link:"",
+    name: "Introduce",
+    link: "",
   },
   {
-    name:"Company",
-    link:"",
+    name: "Company",
+    link: "",
   },
   {
-    name:"Security",
-    link:"",
+    name: "Security",
+    link: "",
   },
   {
-    name:"Service",
-    link:"",
+    name: "Service",
+    link: "",
   },
   {
-    name:"Campaign",
-    link:"",
+    name: "Campaign",
+    link: "",
   },
   {
-    name:"Affiliate",
-    link:"",
+    name: "Affiliate",
+    link: "",
   },
   {
-    name:"Frequently asked",
-    link:"",
+    name: "Frequently asked",
+    link: "",
   },
   {
-    name:"Questions",
-    link:"",
+    name: "Questions",
+    link: "",
   },
   {
-    name:"Support",
-    link:"",
+    name: "Support",
+    link: "",
   },
-]
+];
 export const Media = [
   "/Footer/Facebook.svg",
   "/Footer/Youtube.svg",
@@ -92,32 +92,718 @@ export const blog = [
     decription:
       "Shop and pay with crypto anywhere in the world The Binance Card does everything a regular payment card does, and more.",
   },
-  
 ];
 export const shop = [
   {
-    image : "../Store/Travala.png",
-    name: "Travala"
+    image: "../Store/Travala.png",
+    name: "Travala",
   },
   {
-    image : "../Store/Uminer.png",
-    name: "Uminer"
+    image: "../Store/Uminer.png",
+    name: "Uminer",
   },
   {
-    image : "../Store/Uquid.png",
-    name: "Uquid"
+    image: "../Store/Uquid.png",
+    name: "Uquid",
   },
   {
-    image : "../Store/Coinbase.png",
-    name: "Coinbase"
+    image: "../Store/Coinbase.png",
+    name: "Coinbase",
   },
   {
-    image : "../Store/Bitrefill.png",
-    name: "BitRefills"
+    image: "../Store/Bitrefill.png",
+    name: "BitRefills",
   },
   {
-    image : "../Store/CrytoRefills.png",
-    name: "CryptoRefills"
-  }
-
-]
+    image: "../Store/CrytoRefills.png",
+    name: "CryptoRefills",
+  },
+];
+export const product = [
+  {
+    image: "../Product/1.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/2.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/3.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/4.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/5.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/6.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/7.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/8.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/9.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/10.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/11.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/11.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/11.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/11.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/11.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/11.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/11.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/11.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/11.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/11.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/11.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/11.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/11.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/11.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/11.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/11.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/11.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/11.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/11.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/11.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/11.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/11.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/11.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/11.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/11.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/11.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/11.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/11.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/11.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/11.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/11.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/11.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/11.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/11.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/11.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/11.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/11.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/11.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/11.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/11.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/11.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/11.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/11.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/11.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/11.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/11.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/11.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/11.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/11.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/11.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/11.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/11.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/11.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/11.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/11.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/11.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/11.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/11.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/11.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/11.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/11.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/11.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/11.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/11.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/11.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/11.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/11.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/11.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/11.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/11.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/11.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/11.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/11.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/11.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/11.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/11.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/11.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/11.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/11.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/11.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/11.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/11.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/11.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/11.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/11.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/11.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/11.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+  {
+    image: "../Product/11.png",
+    title: "Starbuck gift card",
+    decription:
+      "/* Starbucks' mission is to inspire and nurture the human spirit ... */",
+    price: "245.23",
+  },
+];

@@ -42,10 +42,11 @@ export default function Banner() {
           </Link>
         </div>
         <img className="sm:block hidden pt-10  bg-[#D6EBFF] " src="../Index/Banner0.png" />
-        <div className="sm:hidden pt-6 pl-44 justify-end">
-          <img className=" h-[86px] w-[86px]" src="../Index/banner2.png" />
+        <div className="sm:hidden pt-10 grid justify-items-end">
+          {/* <img className=" h-[86px] w-[86px]" src="../Index/banner2.png" />
           <img className="h-[66px] w-[66px] ml-24 mt-2 absolute top-16 right-3" src="../Index/banner3.png" />
-          <img className="mt-9" src="../Index/banner1.png" />
+          <img className="mt-9" src="../Index/banner1.png" /> */}
+          <img className = "" src="../Index/BannerMobile.png"/>
           {/* <img src= "../Index/imagebanner2.png" />
           <img src= "../Index/imagebanner3.png" />
           <img src= "../Index/imagebanner4.png" /> */}
