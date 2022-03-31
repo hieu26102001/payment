@@ -101,9 +101,7 @@ export default function Invoice() {
   const size = useWindowSize();
 
   const [payMethod, setPayMethod] = useState(payMethodList[0].value);
-  const [coinUnit, setCoinUnit] = useState();
   const [payCoin, setPayCoin] = useState(coinData[0]);
-  const [openNetwork, setOpenNetwork] = useState(false)
   const [openPayMethod, setOpenPayMethod] = useState(false)
   const handleOpenDialog = (setOpen) => {
     setOpen(true)
@@ -242,21 +240,22 @@ export default function Invoice() {
             <Box >
               <AccordionPayment label="order review" subtext="3 products" />
             </Box>
-            <Box className="md:py-0 py-3" >
+            {/* <Box className="md:py-0 py-3" >
               <AccordionPayment label="discount codes" />
-            </Box>
+            </Box> */}
             {/* <AccordionPayment label="billing summary"> */}
-            <BillingSummary />
+            <BillingSummary>
             {/* </AccordionPayment> */}
             {payCoin && payMethod === "crypto" && (
-              <Box className="p-5 flex justify-between items-center">
+              <div className="mt-12 p-5 flex justify-between items-center border border-[#DCDFE6] rounded">
                 <div className="flex gap-2 items-center">
                   <img src={payCoin.icon} className="inline" />
                   <span className="uppercase font-semibold">{payCoin.unit}</span>
                 </div>
                 <span className="font-semibold">{payCoin.price}</span>
-              </Box>
+              </div>
             )}
+            </BillingSummary>
           </div>
         </div>
       </section>
