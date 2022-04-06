@@ -7,11 +7,9 @@ export default function Authlayout({children}){
     const [style,setStyle]= useState({ bg:"bg-[rgba(255,255,255,0)]",position : "absolute"})
     const bgimage = "/Auth/bg-image.png"
  return(
-     <div className="mx-auto ">
-
-        <div className="md:flex max-w-[1600px] max-h-[1000px]">
+        <div className="md:flex mx-auto max-w-[1600px] max-h-[1000px]">
             <div className="hidden md:flex w-1/2 text-black items-center relative ">
-                <Header styleCustom={style} colorLogo="#FFF" isAuth={true}/>
+                <Header styleCustom={style} colorLogo="#FFF" isLogin={true}/>
                 <Text/>
                 <img src ={bgimage} className="hidden md:block top-0 -z-10 w-full"/>
             </div>
@@ -19,6 +17,5 @@ export default function Authlayout({children}){
                 {children}
             </div>
         </div>
-     </div>
  )
 }
