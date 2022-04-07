@@ -4,6 +4,7 @@ import { InvoiceHistory } from "../../data/Invoice-history";
 export default function Table() {
     const page = InvoiceHistory.length
     return (
+        
         <table className="table-fixed w-full p-2">
             <thead className="text-left text-xs font-medium text-gray-500 bg-[rgba(242,246,252,1)]">
                 <tr className="border-b-2 border-gray-300">

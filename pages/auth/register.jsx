@@ -1,5 +1,5 @@
 import Authform from "../../components/auth/Auth-form";
-import RegisterForm from "../../components/auth/Input/Register";
+import RegisterForm from "../../components/auth/Form/Register";
 import Authlayout from "../../components/partials/auth-layout";
 
 

@@ -1,5 +1,5 @@
-import {     UserCircleIcon } from "@heroicons/react/solid";
-import { LogoutIcon } from "@heroicons/react/outline";
+import { UserCircleIcon } from "@heroicons/react/solid";
+import { LogoutIcon, MenuIcon } from "@heroicons/react/outline";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import Icon from "../Icon";
@@ -7,6 +7,8 @@ import Link from "next/link"
 import { Button, Popover } from "@mui/material";
 import jsCookie from "js-cookie";
 import Route from "next/router"
+import useWindowSize from "../../hooks/useWindowSize";
+
 
 export default function Header({ styleCustom, colorLogo, isLogin = false }) {
     const token = jsCookie.get('access_token')
@@ -22,17 +24,20 @@ export default function Header({ styleCustom, colorLogo, isLogin = false }) {
     const handleClose = () => {
         setAnchorEl(null);
     };
-    const Logout = async () =>{
+    const Logout = async () => {
         jsCookie.remove('access_token')
-        Route.push("/")
-     }
-    
+        Route.push("/auth/login")
+    }
+    const width = useWindowSize()
+    const mobile = (width.width < 768)
+    const maxwidth = (width.width <= 1600 ?width.width: 1600)
+    console.log(mobile)
 
     const open = Boolean(anchorEl);
-    const id = open ? 'simple-popover' : undefined;
+    const id = open ? '1' : undefined;
     return (
-        <header className={`${bg} w-full md:px-[20px] pl-4 ${position} top-0 py-[15px] z-50`}>
-            <div className="max-w-[1600px] mx-auto flex justify-between " >
+        <header className={`${bg} w-full md:px-[20px] pl-4 ${position} md:top-0 md:left-0 py-[15px] z-50`}>
+            <div className={`max-w-[${maxwidth}px] mx-auto flex justify-between `} >
                 <div className="flex items-center">
                     <Link href="/">
                         <a>
@@ -40,6 +45,8 @@ export default function Header({ styleCustom, colorLogo, isLogin = false }) {
                         </a>
                     </Link>
                 </div>
+            {/* --PC--     */}
+            
                 <div className={`flex space-x-6 items-center ${!isLogin ? "" : "hidden"}`}>
                     <div className="flex space-x-6 items-center h-full">
                         <Link href="/">
@@ -102,14 +109,13 @@ export default function Header({ styleCustom, colorLogo, isLogin = false }) {
                                         <div className="px-2">Name</div>
                                     </button>
                                     <button className="flex text-[#E53535] py-2" onClick={Logout}>
-                                        <div className="w-8"><LogoutIcon/></div>
+                                        <div className="w-8"><LogoutIcon /></div>
                                         <div className="px-2">Log out</div>
                                     </button>
                                 </div>
                             </Popover>
-                        </div>}
-
-
+                        </div>
+                    }
                 </div>
             </div>
         </header>

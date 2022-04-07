@@ -1,5 +1,5 @@
 import Authform from "../../components/auth/Auth-form";
-import RecoverPassword from "../../components/auth/Input/recorver-password";
+import RecoverPassword from "../../components/auth/Form/recorver-password";
 import Authlayout from "../../components/partials/auth-layout";
 
 
