@@ -4,7 +4,7 @@ export default function Intro() {
   return (
     <div className="md:mx-10 mx-4">
       <div className="text-center my-10 relative">
-        <h1 className="z-10 text-center md:text-5xl text-2xl leading-8 font-extrabold">
+        <h1 className="z-10 text-center md:text-5xl text-2xl leading-8 font-extrabold relative">
         <span className="md:h-4 md:w-32 w-[67px] h-3 bg-[#F3C219] absolute md:top-4 top-3 -z-10 "> </span>
           INTRODUCE
         </h1>
