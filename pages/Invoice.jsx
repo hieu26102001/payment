@@ -13,63 +13,10 @@ import useWindowSize from "../hooks/useWindowSize";
 import Responsive from "../components/Responsive";
 import Network from "../components/Popup/Network";
 import Layout from "../components/partials/layout";
-const coinData = [
-  {
-    icon: "/Icon/Bitcoin (BTC).svg",
-    unit: "BTC",
-    text: "Pay using BTC",
-    price: 0.005634,
-  },
-  {
-    icon: "/Icon/Ethereum (ETH).svg",
-    unit: "ETH",
-    text: "Pay using ETH",
-    price: 0.005634,
-  },
-  {
-    icon: "/Icon/Fantom (FTM).svg",
-    unit: "FTM",
-    text: "Pay using FTM",
-    price: 0.005634,
-  },
-  {
-    icon: "/Icon/HUSD (HUSD).svg",
-    unit: "HUSD",
-    text: "Pay using HUSD",
-    price: 0.005634,
-  },
-  {
-    icon: "/Icon/ICON (ICX).svg",
-    unit: "ICX",
-    text: "Pay using ICX",
-    price: 0.005634,
-  },
-  {
-    icon: "/Icon/Tether (USDT).svg",
-    unit: "USDT",
-    text: "Pay using USDT",
-    price: 0.005634,
-  },
-  {
-    icon: "/Icon/UMA (UMA).svg",
-    unit: "UMA",
-    text: "Pay using UMA",
-    price: 0.005634,
-  },
-];
+import { useRecoilState, useRecoilValue, useResetRecoilState } from "recoil";
+import { coinData, payMethodList, COIN_PAYMENT_STATE, OPEN_LIST_COIN_STATE, PAYMENT_METHOD_STATE, CURRENT_ACCESS_TOKEN, resetInvoiceState, NETWORK_STATE } from "../states/invoice-state";
+import jsCookie from "js-cookie";
 
-const payMethodList = [
-  {
-    value: "paypal",
-    label: "PayPal",
-    content: 'You will be redirected to the PayPal website after submitting your order',
-    icon: "Icon/PayPal0.svg"
-  },
-  {
-    value: "crypto",
-    label: "Pay with Crypto",
-  },
-];
 const validEmail = (email) => {
   if (!email || email.trim() === "")
     return { error: true, helperText: "Vui lòng nhập đầy đủ thông tin" };
@@ -100,11 +47,27 @@ const validPhone = (phone) => {
 export default function Invoice() {
   const size = useWindowSize();
 
-  const [payMethod, setPayMethod] = useState(payMethodList[0].value);
-  const [coinUnit, setCoinUnit] = useState();
-  const [payCoin, setPayCoin] = useState(coinData[0]);
-  const [openNetwork, setOpenNetwork] = useState(false)
-  const [openPayMethod, setOpenPayMethod] = useState(false)
+  // const [payMethod, setPayMethod] = useState(payMethodList[0].value);
+  // const [payCoin, setPayCoin] = useState(coinData[0]);
+  // const [openPayMethod, setOpenPayMethod] = useState(false)
+
+  const [payMethod, setPayMethod] = useRecoilState(PAYMENT_METHOD_STATE);
+  const [payCoin, setPayCoin] = useRecoilState(COIN_PAYMENT_STATE);
+  const openListCoin = useRecoilValue(OPEN_LIST_COIN_STATE)
+  const [currentToken,setCurrentToken] = useRecoilState(CURRENT_ACCESS_TOKEN)
+  let token = jsCookie.get("access_token")
+  console.log(token)
+
+  const resetNetwork = useResetRecoilState(NETWORK_STATE)
+  const resetCoinPayment = useResetRecoilState(COIN_PAYMENT_STATE)
+  const resetPaymentMethod = useResetRecoilState(PAYMENT_METHOD_STATE)
+
+  const resetInvoiceState = () =>{
+        resetNetwork()
+        resetCoinPayment()
+        resetPaymentMethod()
+  }
+
   const handleOpenDialog = (setOpen) => {
     setOpen(true)
   }
@@ -112,17 +75,19 @@ export default function Invoice() {
     setOpen(false)
   }
 
-  console.log(payCoin);
-  // useEffect(() => {
-  //   setPayCoin(coinData.find((c) => c.unit === coinUnit));
-  // }, [coinUnit]);
   useEffect(() => {
-    size.width >= 768 ? setOpenPayMethod(true) : null
-    console.log(openPayMethod)
+    if(currentToken !==token){
+      resetInvoiceState()
+      setCurrentToken(token)
+    }
+  },[]);
+  useEffect(() => {
+    // size.width >= 768 ? setOpenPayMethod(true) : null
   }, [size.width])
+
   return (
     <Layout>
-      <section className="py-9 md:px-2">
+      <section className="py-9 md:px-5">
         <div className="flex flex-col md:grid md:grid-cols-5 gap-5 md:gap-11 m-auto max-w-[1600px]">
           <div className="md:col-span-3 flex flex-col gap-5">
             <Responsive
@@ -155,13 +120,13 @@ export default function Invoice() {
             </Responsive>
             {/* SELECT NETWORK */}
             <div>
-              <Box>
-                <AccordionPayment
+              <Box label="select network" className="p-5" >
+                {/* <AccordionPayment
                   label="select network"
                   subtext="Binance Chain"
-                >
-                  <Network />
-                </AccordionPayment>
+                > */}
+                <Network />
+                {/* </AccordionPayment> */}
               </Box>
             </div>
             {/* <Dialog open={size.width >= 768 ? openNetwork : false}  >
@@ -171,7 +136,7 @@ export default function Invoice() {
             <div>
               <Responsive
                 Computer={<Box label="payment method" className="p-5 flex flex-col gap-7" />}
-                Mobile={<AccordionPayment label="payment method" controller={setOpenPayMethod} />}
+                Mobile={<AccordionPayment label="payment method" />}
                 sizeWindow={size}
               >
                 <FormControl fullWidth >
@@ -206,7 +171,7 @@ export default function Invoice() {
                     ))}
                   </RadioGroup>
                 </FormControl>
-                {payMethod === "crypto" && openPayMethod && (
+                {payMethod === "crypto" && openListCoin && (
                   // <Box className="p-5">
                   <RadioGroup
                     fullWidth
@@ -237,26 +202,27 @@ export default function Invoice() {
 
 
           </div>
-          
+
           <div className="md:col-span-2 flex flex-col gap-5">
             <Box >
               <AccordionPayment label="order review" subtext="3 products" />
             </Box>
-            <Box className="md:py-0 py-3" >
+            {/* <Box className="md:py-0 py-3" >
               <AccordionPayment label="discount codes" />
-            </Box>
+            </Box> */}
             {/* <AccordionPayment label="billing summary"> */}
-            <BillingSummary />
-            {/* </AccordionPayment> */}
-            {payCoin && payMethod === "crypto" && (
-              <Box className="p-5 flex justify-between items-center">
-                <div className="flex gap-2 items-center">
-                  <img src={payCoin.icon} className="inline" />
-                  <span className="uppercase font-semibold">{payCoin.unit}</span>
+            <BillingSummary>
+              {/* </AccordionPayment> */}
+              {payCoin && payMethod === "crypto" && (
+                <div className="mt-12 p-5 flex justify-between items-center border border-[#DCDFE6] rounded">
+                  <div className="flex gap-2 items-center">
+                    <img src={payCoin.icon} className="inline" />
+                    <span className="uppercase font-semibold">{payCoin.unit}</span>
+                  </div>
+                  <span className="font-semibold">{payCoin.price}</span>
                 </div>
-                <span className="font-semibold">{payCoin.price}</span>
-              </Box>
-            )}
+              )}
+            </BillingSummary>
           </div>
         </div>
       </section>
