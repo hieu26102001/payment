@@ -2,7 +2,6 @@ import {
   Accordion,
   AccordionDetails,
   AccordionSummary,
-  Button,
   Checkbox,
   createTheme,
   FormControlLabel,
@@ -14,7 +13,7 @@ import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import clsx from "clsx";
 import Box from "../partials/Box";
 
-export default function BillingDetail({ children }) {
+export default function BillingDetail() {
   const Info = ({ header, value, unit, className }) => {
     return (
       <div className={clsx("flex justify-between ", className)}>
@@ -29,10 +28,10 @@ export default function BillingDetail({ children }) {
 
   const theme = createTheme({
     components: {
-      MuiPaper: {
-        styleOverrides: {
-          root: {
-            boxShadow: "none"
+      MuiPaper:{
+        styleOverrides:{
+          root:{
+            boxShadow:"none"
           }
         }
       },
@@ -40,14 +39,14 @@ export default function BillingDetail({ children }) {
         styleOverrides: {
           expandIconWrapper: {
             // position: "absolute",
-            top: 0,
+            top:0,
             right: 0,
             color: "black",
           },
           root: {
             padding: 0,
             minHeight: 0,
-            alignItems: "start",
+            alignItems:"start",
             "&.Mui-expanded": {
               minHeight: 10,
             }
@@ -71,45 +70,45 @@ export default function BillingDetail({ children }) {
   });
 
   return (
-    <Box className="p-5 " >
-      {/* <ThemeProvider theme={theme}>
+    <Box className="p-5 divide-y" >
+      <ThemeProvider theme={theme}>
         <Accordion>
-          <AccordionSummary expandIcon={<ArrowDropDownIcon />}> */}
-      <div>
-        <div className="capitalize text-black font-semibold pb-5">billing summary</div>
-      </div>
-      {/* </AccordionSummary>
-          <AccordionDetails> */}
-      <div className="py-5 flex flex-col gap-3 ">
-        <Info
-          className="text-[#4F4F4F]"
-          header="Subtotal"
-          value={3720.27}
-          unit="$"
-        />
-        <Info
-          className="text-[#4F4F4F]"
-          header="Discount"
-          value={749.99}
-          unit="$"
-        />
-        <Info
-          className="text-[#4F4F4F]"
-          header="Shipping"
-          value={0.0}
-          unit="$"
-        />
-        <Info
-          className="text-[#4F4F4F]"
-          header="Tax"
-          value={228.72}
-          unit="$"
-        />
-      </div>
-      {/* </AccordionDetails> */}
-
-      {/* </Accordion>
-      </ThemeProvider> */}
+          <AccordionSummary expandIcon={<ArrowDropDownIcon />}>
+            <div>
+              <div className="capitalize text-black font-semibold pb-5">billing summary</div>
+            </div>
+          </AccordionSummary>
+          <AccordionDetails>
+            <div className="pb-5 flex flex-col gap-3 ">
+              <Info
+                className="text-[#4F4F4F]"
+                header="Subtotal"
+                value={3720.27}
+                unit="$"
+              />
+              <Info
+                className="text-[#4F4F4F]"
+                header="Discount"
+                value={749.99}
+                unit="$"
+              />
+              <Info
+                className="text-[#4F4F4F]"
+                header="Shipping"
+                value={0.0}
+                unit="$"
+              />
+              <Info
+                className="text-[#4F4F4F]"
+                header="Tax"
+                value={228.72}
+                unit="$"
+              />
+            </div>
+          </AccordionDetails>
+          
+        </Accordion>
+      </ThemeProvider>
       <div className="py-5 flex flex-col gap-7 ">
         <Info
           className="text-black font-bold mb-1"
@@ -124,7 +123,7 @@ export default function BillingDetail({ children }) {
           label="Order Comment"
           InputLabelProps={{ shrink: true }}
         />
-        {/* <FormControlLabel
+        <FormControlLabel
           control={<Checkbox defaultChecked />}
           label={
             <p>
@@ -139,11 +138,7 @@ export default function BillingDetail({ children }) {
               </Link>
             </p>
           }
-        /> */}
-        {children}
-        <Button  className="bg-blue-500 hover:bg-blue-600 py-4 text-white text-lg capitalize">
-          Payment
-        </Button>
+        />
       </div>
     </Box>
   );
