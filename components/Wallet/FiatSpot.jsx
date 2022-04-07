@@ -2,6 +2,10 @@ import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import { Button } from '@mui/material';
 import clsx from 'clsx';
+import { useEffect } from 'react';
+import { useRecoilValue } from 'recoil';
+import useWallets from '../../hooks/useWallets';
+import { FILTERED_WALLETS_STATE } from '../../states/wallet-state';
 import FormattedNumber from '../FormattedNumber';
 
 const data = [
@@ -63,25 +67,32 @@ const ButtonWallet = ({ text }) => {
   )
 }
 
-const mapTable = ["total", "available", "order"]
+const mapTable = ["total", "amount", "locked"]
 
 export default function FiatSpot() {
 
+  const {loading, getBalances, ...wallets } = useWallets()
+  const {stats, spot} = useRecoilValue(FILTERED_WALLETS_STATE)
+  useEffect(async ()=>{
+  getBalances()
+  
+  },[])
+  console.log(wallets)
   return (
     <div className="px-5" >
       <div className='bg-[#D9ECFF] px-5 py-6 flex justify-between items-center rounded my-8' >
         <div className='ml-[2px] flex flex-col gap-8 ' >
           <div>
-            <span className='text-[#909399] mr-8' >Total balance:</span>
+            <span className='text-[#909399] mr-8' >{stats.title}</span>
             <span className='text-sm text-[#909399]' >
               <span><VisibilityIcon /></span>
               <span className='ml-2' >Show</span>
             </span>
           </div>
           <div className='flex items-center'>
-            <FormattedNumber value={0.184} suffix=" USDT" className="inline-block text-[#2F88FF] text-2xl font-semibold " />
+            <FormattedNumber value={stats.value} suffix=" USDT" className="inline-block text-[#2F88FF] text-2xl font-semibold " />
             <span className="ml-2 mr-1 text-[#909399]">≈</span>
-            <FormattedNumber value={0.18} currency="USD" className="inline-block text-[#909399]" options={{ minimumFractionDigits: 2 }} />
+            <FormattedNumber value={stats.value} currency="USD" className="inline-block text-[#909399]" options={{ minimumFractionDigits: 2 }} />
           </div>
         </div>
         <div className='flex gap-3' >
@@ -103,7 +114,7 @@ export default function FiatSpot() {
                 Available
               </th>
               <th scope="col" className="px-6 py-3 tracking-wider w-80 text-right font-light">
-                In Order
+                Locked
               </th>
               <th scope="col" className="px-6 pr-[86px] py-3 tracking-wider w-80 text-right font-light">
                 Actions
@@ -111,24 +122,25 @@ export default function FiatSpot() {
             </tr>
           </thead>
           <tbody className="bg-white divide-y divide-gray-200 text-sm">
-            {data.map((coin, index) =>
-              <tr key={coin.index} className="h-[85px]" >
+            {spot.map((coin, index) =>
+              <tr key={index} className="h-[85px]" >
                 <td className="px-6 py-2 whitespace-nowrap">
                   <a href="#">
                     <div className="flex items-center">
                       <div className="flex-shrink-0 h-8 w-8">
                         <img
                           className="h-8 w-8 rounded-full"
-                          src={coin.img}
+                          src={coin.get_infos?.images}
                           alt=""
                         />
                       </div>
                       <div className="ml-4">
-                        <span className="text-primary mr-2 font-medium">
-                          {coin.title}
+                        <span className="text-primary mr-2 font-medium uppercase">
+                          {coin.currency}
                         </span>
-                        <span className="text-gray-500 text-xs block">
-                          <FormattedNumber value={coin.value} currency="USD" options={{ minimumFractionDigits: 2 }} />
+                        <span className="flex text-gray-500 text-xs ">
+                        <span className="mr-1 text-[#909399]">≈</span>
+                          <FormattedNumber value={coin.tousdt} currency="USD" options={{ minimumFractionDigits: 2 }} />
                         </span>
                       </div>
                     </div>
