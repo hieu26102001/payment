@@ -10,7 +10,6 @@ export default function Recover() {
             <Authform
             label="Recover your password"
             title=""
-            page="/login"
             >
                 <RecoverPassword/>
             </Authform>

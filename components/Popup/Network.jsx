@@ -10,18 +10,18 @@ const Fee = () => (
     </div>)
 export default function Network() {
     const [network, setNetwork] = useRecoilState(NETWORK_STATE)
-    // console.log(network)
+    console.log(network)
     return (
 
-        <form class="flex flex-col">
-            {dataNetwork.map((network, i) =>
-                <label key={i} onClick={() => setNetwork(network)} className="flex items-center border rounded cursor-pointer border-gray-300 p-2 my-1">
-                    <input type="radio" id="BEP2" name="drone" value="BEP2"
+        <form class="flex flex-col mt-8">
+            {dataNetwork.map((n, i) =>
+                <label key={i} onClick={() => setNetwork(n)} className={`flex items-center border ${n.label===network.label?"border-[#2F88FF]":"border-gray-300"} rounded cursor-pointer  p-2 my-1`}>
+                    <input type="radio" id={n.label} name="drone" value={n.label} checked={n.label===network.label}
                     />
                     <div className="flex justify-between w-full py-1 px-3">
                         <div>
-                            <label for="BEP2">{network.label}</label>
-                            <div className="text-gray-400 text-xs">{network.net}</div>
+                            <label for={n.label}>{n.label}</label>
+                            <div className="text-gray-400 text-xs">{n.net}</div>
                         </div>
                         <Fee />
                     </div>

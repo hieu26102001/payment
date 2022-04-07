@@ -9,7 +9,7 @@ import {
 import { useEffect, useRef, useState } from "react";
 import useWindowSize from "../../hooks/useWindowSize";
 
-export default function InputPayment({ label, Validate, selectInput = false, children,...props }) {
+export default function InputPayment({ label, Validate, selectInput = false, children, ...props }) {
   const [inputText, setInputText] = useState();
   const [firstRender, setFirstRender] = useState(true);
   const [validInfo, setValidInfo] = useState({ error: false, helperText: " " });
@@ -39,7 +39,6 @@ export default function InputPayment({ label, Validate, selectInput = false, chi
 
     // console.log(inputText)
   }, [inputText]);
-
   return (
     <div className="mb-3">
       {
