@@ -7,16 +7,9 @@ import { AiOutlineRight, AiOutlineLeft } from "react-icons/ai";
 import { useRecoilValue, useRecoilState } from "recoil";
 import { productListState } from "../hooks/productState";
 import { cartState, addToCart } from "../hooks/cartState";
-import { BiCart } from "react-icons/bi";
 import CartInFo from "../hooks/CardInfo";
 
 export default function Product() {
-  const [cart, setCart] = useRecoilState(cartState);
-  const handleAddtoCart = (product) => {
-  const newCart = addToCart(cart, product);
-  setCart(newCart);
- 
-  };
   const productlist = useRecoilValue(productListState);
   const [posts, setPosts] = useState([]);
   const [currentPage, setcurrentPage] = useState(1);
@@ -27,14 +20,13 @@ export default function Product() {
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPosts = productlist.slice(indexOfFirstPost, indexOfLastPost);
   // change page
-  console.log(cart);
   const paginate = (pageNumber) => setcurrentPage(pageNumber);
   return (
     <Layout>
       <h1> </h1>
-      <div className="bg-white md:px-9 mt-32 pt-4 pb-5 md:mx-4">
+      <div className="bg-white md:px-9 mt-32 pt-4 pb-[108px] md:mx-4">
         <h2 className="text-2xl text-[#4F4F4F] font-Roboto">Products</h2>
-        <div className="grid md:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-2 px-9 mt-8 pt-4 pb-5 md:mx-5 ">
+        <div className="grid lg:grid-cols-4 md:grid-cols-3  grid-cols-1 gap-y-5 gap-x-5 justify-items-center  mt-8 pt-4 pb-9 ">
           {currentPosts.map((item) => {
             return (
               <div key={item.id}>
@@ -43,17 +35,8 @@ export default function Product() {
                   title={item.title}
                   price={item.price}
                   decription={item.decription}
+                  item={item}
                 ></CardProduct>
-                <button
-                  onClick = {() => handleAddtoCart(item)}
-                  className="bg-[#2F88FF] hover:bg-blue-800 text-white md:px-9 md:py-3 md:rounded-md rounded-full  py-1 px-1 flex text-base mt-8"
-                >
-                  {" "}
-                  <h1 className="text-white text-base md:block hidden">
-                    Add 1 to basket
-                  </h1>{" "}
-                  <BiCart className="text-xl px-10 ml-2" />
-                </button>
               </div>
             );
           })}
