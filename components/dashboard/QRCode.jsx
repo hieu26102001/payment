@@ -8,7 +8,7 @@ import { useState, useEffect } from "react";
 export default function QRCode({ Api= "" , Secret = ""} ) {
  
     return (
-        <div className='w-1/6 bg-white p-2 h-max'>
+        <div >
             <div className="flex justify-between text-xl font-medium">
                 <div>Dashboard</div>
             </div>

@@ -12,7 +12,7 @@ export default function UseKey(){
         
         return result
     }
-    const SecretKey = async () => {
+    const SecretKey = async (t="") => {
         const token = jsCookie.get("access_token")
         const { result, error, mes } = await fetcher(`${API_URL}/getSecret`, "POST", {
             token: token

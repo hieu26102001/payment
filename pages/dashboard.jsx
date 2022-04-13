@@ -4,7 +4,7 @@ import QRcode from "../components/Popup/QRCode"
 import { TextField, InputAdornment } from '@mui/material'
 import QRCode from '../components/dashboard/QRCode'
 import jsCookie from "js-cookie"
-import { useRouter } from 'next/router'
+import Route from 'next/router'
 import fetcher from '../lib/fetcher'
 import { API_URL } from '../url'
 import useUser from '../hooks/use-user'
@@ -22,11 +22,12 @@ export default function Dashboard() {
     const [Secret, setSecretKey] = useState()
     // console.log(token)
     // const token = jsCookie.get("access_token")
-    // if(!token) () => Route.push("/auth/login") ;
+    // if(!token) Route.push("/auth/login") ;
 
     useEffect(() => {
         (async function ()  {
             const token = jsCookie.get("access_token")
+            if (!token) return;
             const data = await ApiKey()
             setAPIKEY(data.apikey)
             // console.log(data)
@@ -35,6 +36,7 @@ export default function Dashboard() {
     useEffect(() => {
         (async () => {
             const token = jsCookie.get("access_token")
+            if (!token) return;
             const data = await SecretKey()
             setSecretKey(data)
         })()
@@ -45,9 +47,12 @@ export default function Dashboard() {
     return (
         <Layout>
             <div className='max-w-[1600px] mx-auto px-5 pt-20'>
-                <div className='flex space-x-4'>
-                    <QRCode Api={APIKEY} Secret={Secret} />
-                    <div className="w-5/6 bg-white">
+                <div className='md:flex space-x-4'>
+                    <div className='md:w-1/6 bg-white p-2 h-max'>
+                     <QRCode Api={APIKEY} Secret={Secret} />
+                    </div>
+
+                    <div className="md:w-5/6 bg-white">
                         
                         <Table />
                     </div>

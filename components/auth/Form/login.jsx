@@ -26,7 +26,7 @@ export default function LoginForm() {
         console.log(mes)
         if (error === 0) {
             const cookie = jsCookie.set("access_token", result.access_token, { expires: 0.5 })
-            // await Route.push("/dashboard")
+            await Route.push("/dashboard")
             // console.log(cookie)
 
         }
