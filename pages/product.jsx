@@ -5,9 +5,9 @@ import { useState } from "react";
 import Pagination from "../components/Pagination";
 import { AiOutlineRight, AiOutlineLeft } from "react-icons/ai";
 import { useRecoilValue, useRecoilState } from "recoil";
-import { productListState } from "../hooks/productState";
-import { cartState, addToCart } from "../hooks/cartState";
-import CartInFo from "../hooks/CardInfo";
+import { productListState } from "../states/productState";
+import { cartState, addToCart } from "../states/cartState";
+//import CartInFo from "../hooks/CardInfo";
 
 export default function Product() {
   const productlist = useRecoilValue(productListState);

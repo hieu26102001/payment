@@ -1,6 +1,6 @@
 import { BiCart } from "react-icons/bi";
 import { useRecoilState} from "recoil";
-import { cartState, addToCart } from "../hooks/cartState";
+import { cartState, addToCart } from "../states/cartState";
 import { useEffect, useState } from "react";
 import useWindowSize from "./../hooks/useWindowSize";
 import ShoppingCartSharpIcon from '@mui/icons-material/ShoppingCartSharp';
@@ -25,7 +25,7 @@ export default function CardProduct({ title, price, image, decription ,item }) {
     else{
       setTextSize("md:text-[20px]")
       setStyleContent("")
-      setSizeBtn("rounded-md px-8 py-5 mb-5")
+      setSizeBtn("rounded-md px-8 py-4 mb-5")
       setImage("w-[300px] h-224px")
     }
   },[size.width])
@@ -34,7 +34,7 @@ export default function CardProduct({ title, price, image, decription ,item }) {
     <div className="bg-[#F2F6FC] pt-2 py-3 justify-center md:block flex">
       <div className = "justify-center flex">
         <img
-          className= {` ${setImage} mb `}
+          className= {` ${sizeImg} mb `}
           src={image}
         />
       </div>

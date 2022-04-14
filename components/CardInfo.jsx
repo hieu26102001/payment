@@ -1,5 +1,5 @@
 import { useRecoilValue } from "recoil";
-import { cartState } from "./cartState";
+import { cartState } from "../states/cartState";
 import { useState } from "react";
 import { useRecoilState } from "recoil";
 export default function CartInFo() {
