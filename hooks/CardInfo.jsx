@@ -9,6 +9,7 @@ export default function CartInFo() {
     const newCart = addToCart(cart, product);
     setCart(newCart);
   };
+  const removeCart = () => comer
   return (
     <div>
       <h2> Card Info:</h2>
@@ -20,7 +21,7 @@ export default function CartInFo() {
               - {item.product.price}: {item.quantity}{" "}
             </li>
             <img className = "w-5 h-5" src = {item.product.image} />
-            <button onClick={() => setquantity(quantity + 1)}> + </button>
+            <button onClick={() => setquantity(quantity + 1)}> x </button>
           </div>
         );
       })}

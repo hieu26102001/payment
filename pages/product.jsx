@@ -24,9 +24,9 @@ export default function Product() {
   return (
     <Layout>
       <h1> </h1>
-      <div className="bg-white md:px-9 mt-32 pt-4 pb-[108px] md:mx-4">
+      <div className="bg-white md:px-9 mt-[72px] pt-4 pb-[108px] md:mx-5">
         <h2 className="text-2xl text-[#4F4F4F] font-Roboto">Products</h2>
-        <div className="grid lg:grid-cols-4 md:grid-cols-3  grid-cols-1 gap-y-5 gap-x-5 justify-items-center  mt-8 pt-4 pb-9 ">
+        <div className="grid lg:grid-cols-4 md:grid-cols-3  grid-cols-1 gap-y-5 gap-x-8 justify-items-center  mt-8 pt-4 pb-9 ">
           {currentPosts.map((item) => {
             return (
               <div key={item.id}>
