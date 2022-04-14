@@ -21,3 +21,12 @@ export const addToCart = (cart, product) => {
   });
   return newCart;
 };
+export const removetoCart = (cart , product) => {
+  const newCart = [...cart]
+  const foundIndex = cart.findIndex((x) => x.id === product.id)
+  if (foundIndex >= 0){
+    newCart.splice(foundIndex, 1)
+    return newCart;
+  }
+
+}
