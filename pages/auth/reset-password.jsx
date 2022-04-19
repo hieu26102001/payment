@@ -1,5 +1,5 @@
 import Authform from "../../components/auth/Auth-form";
-import ResetPassword from "../../components/auth/Input/reset-password";
+import ResetPassword from "../../components/auth/Form/reset-password";
 import Authlayout from "../../components/partials/auth-layout";
 
 export default function Reset(){

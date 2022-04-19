@@ -5,6 +5,8 @@ import Head from "next/head"
 import jsCookie from "js-cookie"
 import Route from "next/router"
 import Authform from "../Auth-form"
+import fetcher from "../../../lib/fetcher"
+import { API_URL } from "../../../url"
 
 export default function LoginForm() {
     const ValidInput = (text) => {
@@ -13,30 +15,20 @@ export default function LoginForm() {
         else return { error: false, helperText: " " };
     }
     const onSubmit = async (event) => {
-        var _header = new Headers({
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        })
         event.preventDefault();
+
         const body = {
             email: event.currentTarget.email.value,
             password: event.currentTarget.password.value,
         }
 
-        const response = await fetch("https://pay.fmcpay.com/api/login", {
-            method: "POST",
-            headers: _header,
-            body: JSON.stringify(body),
-        })
-        const data = await response.json()
-        const { result, mes, error } = data
-    console.log(result)
-
+        const { result, mes, error } = await fetcher(`${API_URL}/login`,"POST",body)
         console.log(mes)
         if (error === 0) {
             const cookie = jsCookie.set("access_token", result.access_token, { expires: 0.5 })
-            Route.push("/dashboard")
+            await Route.push("/dashboard")
             // console.log(cookie)
+
         }
         else return (mes)
     }
