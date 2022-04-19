@@ -8,13 +8,19 @@ import Icon from "../Icon";
 export default function Authlayout({ children }) {
     const [style, setStyle] = useState({ bg: "bg-[rgba(255,255,255,0)]", position: "absolute" })
     const window = useWindowSize()
-    const bgimage = (window.width < 768 ? "/Auth/bg-image2.png":"/Auth/bg-image.png")
+    const bgimage = (window.width < 768 ? "/Auth/bg-image2.png" : "/Auth/bg-image.png")
     // console.log(window)
     return (
         <div className="md:flex mx-auto max-w-[1600px] max-h-[1000px]">
             <div className="grid md:flex lg:w-1/2 text-black items-center relative  ">
                 <div className="hidden md:flex">
-                    <Header styleCustom={style} colorLogo="#FFF" isLogin={true} />
+                    <div className="absolute md:top-0 md:left-0 p-4">
+                        <Link href="/">
+                            <a className="  mx-auto ">
+                                <Icon colorLogo="#FFF" />
+                            </a>
+                        </Link>
+                    </div>
                 </div>
                 <Text />
                 <div className="md:hidden flex  flex-col w-full items-center  absolute ">
