@@ -15,7 +15,7 @@ const Pagination = ({ postPerPage, totalPosts , paginate }) => {
                 <div className="flex">
                     <a>  </a>
                 <li key={number} className="">
-            <a href = "#" onClick={() => paginate(number)}  className=" mx-5 text-[#606266] ">
+            <a href = "#" onClick={() => paginate(number)}  className= {`mx-5 text-[#606266] `}>
               {number}
               {/* {console.log(number)} */}
             </a>
