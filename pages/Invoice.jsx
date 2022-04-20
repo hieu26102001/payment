@@ -88,7 +88,7 @@ export default function Invoice() {
   return (
     <Layout>
       <section className="py-9 md:px-5">
-        <div className="flex flex-col md:grid md:grid-cols-5 gap-5 md:gap-11 m-auto max-w-[1600px]">
+        <div className="flex flex-col lg:grid lg:grid-cols-5 gap-5 md:gap-11 m-auto max-w-[1600px]">
           <div className="md:col-span-3 flex flex-col gap-5">
             <Responsive
               Computer={<Box label="contact name" className="p-5" />}
@@ -161,7 +161,7 @@ export default function Invoice() {
                                 <img className="w-7" src={payCoin.icon} ></img>}
                               <div>
                                 <div className="font-medium text-lg">{item.label}</div>
-                                <div className="hidden md:inline text-[#4F4F4F]" >{item.content}</div>
+                                <div className="text-xs inline text-[#4F4F4F]" >{item.content}</div>
                               </div>
                             </div>}
                           checked={payMethod && payMethod === item.value}
@@ -173,28 +173,31 @@ export default function Invoice() {
                 </FormControl>
                 {payMethod === "crypto" && openListCoin && (
                   // <Box className="p-5">
-                  <RadioGroup
-                    fullWidth
-                    // onChange={(e) => setCoinUnit(e.target.value)}
-                    className="grid md:grid-cols-2 gap-4"
-                  >
-                    {coinData.map((coin) => (
-                      // <FormLabel
-                      //   value={coin.unit}
-                      //   control={<Radio />}
-                      //   label={
-                      <div className={`${payCoin && payCoin.unit === coin.unit ? "border-[#2F88FF]" : "border-[#DCDFE6]"} cursor-pointer flex gap-2 items-center border rounded p-4 `}
-                        //  onClick={()=>handleSetCoin(coin)}
-                        onClick={() => setPayCoin(coin)}
-                      >
-                        <img src={coin.icon} className="inline" />
-                        <span className="text-[#606266]" >{coin.text}</span>
-                      </div>
-                      // }
-                      // checked={payCoin && payCoin.unit === coin.unit}
-                      // />
-                    ))}
-                  </RadioGroup>
+                  <div>
+                    <div className="text-[#606266] my-6" >Select a crypto</div>
+                    <RadioGroup
+                      fullWidth
+                      // onChange={(e) => setCoinUnit(e.target.value)}
+                      className="grid md:grid-cols-2 gap-4"
+                    >
+                      {coinData.map((coin) => (
+                        // <FormLabel
+                        //   value={coin.unit}
+                        //   control={<Radio />}
+                        //   label={
+                        <div className={`${payCoin && payCoin.unit === coin.unit ? "border-[#2F88FF]" : "border-[#DCDFE6]"} cursor-pointer flex gap-2 items-center border rounded p-4 `}
+                          //  onClick={()=>handleSetCoin(coin)}
+                          onClick={() => setPayCoin(coin)}
+                        >
+                          <img src={coin.icon} className="inline" />
+                          <span className="text-[#606266]" >{coin.text}</span>
+                        </div>
+                        // }
+                        // checked={payCoin && payCoin.unit === coin.unit}
+                        // />
+                      ))}
+                    </RadioGroup>
+                  </div>
                   // </Box>
                 )}
               </Responsive>
