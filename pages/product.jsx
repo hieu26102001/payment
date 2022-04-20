@@ -33,7 +33,7 @@ export default function Product() {
                 <CardProduct
                   image={item.image}
                   title={item.title}
-                  price={item.price}
+                  price={item.newPrice}
                   decription={item.decription}
                   newprice = {item.newprice}
                   item={item}
