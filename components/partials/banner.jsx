@@ -9,7 +9,7 @@ export default function Banner() {
   useEffect(()=>{
     if(size.width <=1180 ){
       setTextSize("xs:text-2xl md:text-[32px]   md:leading-normal")
-      setStyleContent("absolute md:top-1 md:w-[440px] w-[350px] md:text-left text-center")
+      setStyleContent("absolute md:top-1 md:w-[440px] xs:w-[350px] w-[320px] md:text-left text-center")
       setSizeBtn("w-[230px] h-[50px]")
     }
     else{
@@ -22,7 +22,7 @@ export default function Banner() {
   return (
     <div className="bg-[#D6EBFF]  ">
       <div className="max-w-[1600px] mx-auto" >
-        <div className={`md:ml-16 ml-4 ${styleContent} pt-20 sm:pt-[70px] md:pt-20  `}>
+        <div className={`md:ml-16 xs:ml-4 ${styleContent} pt-20 sm:pt-[70px] md:pt-20  `}>
           <h1 className={`${textSize} font-bold text-[#2F88FF] mb-4  font-serif leading-normal `}>
             Electronic payment solution in Viet Nam
           </h1>
@@ -42,7 +42,7 @@ export default function Banner() {
           </Link>
         </div>
         <img className="sm:block hidden pt-10  bg-[#D6EBFF] " src="../Index/Banner0.png" />
-        <div className="sm:hidden pt-52 grid justify-items-end">
+        <div className="sm:hidden pt-56 grid justify-items-center">
           {/* <img className=" h-[86px] w-[86px]" src="../Index/banner2.png" />
           <img className="h-[66px] w-[66px] ml-24 mt-2 absolute top-16 right-3" src="../Index/banner3.png" />
           <img className="mt-9" src="../Index/banner1.png" /> */}

@@ -11,20 +11,18 @@ export default function BannerStore() {
   useEffect(() => {
     if (size.width <= 1180) {
       setTextSize("xs:text-xl md:text-[28px] md:leading-normal");
-      setStyleContent("absolute md:top-1 md:w-[440px] w-[220px]");
-      setSizeBtn("w-[230px] h-[50px]");
+      setStyleContent("absolute md:top-1 md:w-[440px] xs:w-[350px] w-[300px] ");
     } else {
       setTextSize("md:text-[48px]");
       setStyleContent("absolute md:top-10 md:w-[600px] w-[220px]");
-      setSizeBtn("w-[351px] h-[61px]");
-    }
+      setSizeBtn("w-[351px] h-[61px]");    }
   }, [size.width]);
   console.log(size.width);
   return (
-    <div className="  bg-[#D6EBFF]   ">
+    <div className="  bg-[#D6EBFF] justify-center">
       <div className="max-w-[1600px] mx-auto">
         <div
-          className={`md:ml-16 ml-4 ${styleContent} pt-16  sm:pt-[70px] md:pt-16  `}
+          className={`md:ml-16 xs:ml- ${styleContent} pt-20  sm:pt-[70px]  md:pt-16 md:text-left text-center `}
         >
           <h1
             className={`${textSize} font-bold text-[#2F88FF] mb-4  font-serif leading-tight`}
@@ -42,11 +40,13 @@ export default function BannerStore() {
             className=" sm:block hidden  bg-[#D6EBFF]"
             src="../Store/BannerStore.png"
           />
+        </div>
+        <div className = "pt-9 grid justify-items-center sm:hidden">
           <img
-            className="sm:hidden justify-center md:w-[426px] md:h-[475px] w-[202px] h-[440px] ml-32  pt-56  md:ml-52 md:pt-5 bg-[#D6EBFF]"
+            className="  md:w-[426px] md:h-[475px] w-[202px] h-[440px] pt-56 md:pt-5 bg-[#D6EBFF]"
             src="../Store/BannerStore2.png"
           />
-        </div>
+          </div>
       </div>
     </div>
   );
