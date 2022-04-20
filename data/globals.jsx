@@ -1,3 +1,25 @@
+export const headerNavigation = [
+  {
+    name: "Home",
+    link:"/"
+  },
+  {
+    name: "Shopping",
+    link:"/store"
+  },
+  {
+    name: "Invoice",
+    link:"/Invoice"
+  },
+  {
+    name: "Dashboard",
+    link:"/dashboard"
+  },
+  {
+    name: "Wallet",
+    link:"/wallet"
+  }
+]
 export const FooterNavigation = [
   {
     name: "About us",

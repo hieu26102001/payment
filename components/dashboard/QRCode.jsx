@@ -1,8 +1,14 @@
-import { TextField,InputAdornment } from "@mui/material"
-
-export default function QRCode() {
+import { TextField, InputAdornment, InputLabel } from "@mui/material"
+import fetcher from "../../lib/fetcher"
+import { API_URL } from "../../url"
+import jsCookie from "js-cookie"
+import copy from "clipboard-copy";
+import  UseKey  from '../../hooks/use-key'
+import { useState, useEffect } from "react";
+export default function QRCode({ Api= "" , Secret = ""} ) {
+ 
     return (
-        <div className='w-1/6 bg-white p-2 h-max'>
+        <div >
             <div className="flex justify-between text-xl font-medium">
                 <div>Dashboard</div>
             </div>
@@ -10,19 +16,20 @@ export default function QRCode() {
                 <img src="/Icon/QR.svg" />
                 <div className='text-xs py-3'>Scan to get address</div>
             </div>
-            <div className="my-4">
+            <div className="my-4 mb-5">
+                <InputLabel shrink className="px-2">API Key</InputLabel>
                 <TextField
                     disabled
                     fullWidth
-                    label="API Key"
-                    defaultValue="e8PCuahTDMmajuriqjQvujMN5N"
+                    defaultValue={Api}
+                    value={Api}
                     id="API Key"
                     focused
                     InputProps={{
                         endAdornment: (
                             <InputAdornment position="end">
                                 <button onClick={() => {
-                                    copy("e8PCuahTDMmajuriqjQvujMN5N")
+                                    copy(Api)
                                 }}
                                 >
                                     <img src="/Icon/copy.svg" />
@@ -33,19 +40,21 @@ export default function QRCode() {
                 />
 
             </div>
-            <div className="my-4">
+            <div className="my-4 mb-5">
+                <InputLabel shrink className="px-2">Secret Key</InputLabel>
                 <TextField
                     disabled
                     fullWidth
-                    label="Secret Key"
-                    defaultValue="671hdklanhfjalo20kdbndxjkakI"
+                    defaultValue={Secret}
+                    value={Secret}
                     id="Secret Key"
+                    type="password"
                     focused
                     InputProps={{
                         endAdornment: (
                             <InputAdornment position="end">
                                 <button onClick={() => {
-                                    copy("671hdklanhfjalo20kdbndxjkakI")
+                                    copy(Secret)
                                 }}
                                     nested>
                                     <img src="/Icon/copy.svg" />
