@@ -21,11 +21,11 @@ export default function Intro() {
           }
           return (
             <div className={`my-10 ${a}`}>
-              <div className="md:w-[700px] md:h-[600px] ml-11">
+              <div className="lg:w-[700px] lg:h-[600px] md:w-[750px] md:h-[450px]  lg:ml-11">
                 <img src={item.image} />
               </div>
-              <div className="md:mt-32 mt-8 md:w-[600px]">
-                <h1 className="font-bold font-serif md:text-5xl text-lg md:mb-10 mb-4">
+              <div className="lg:mt-32 mt-8 md:w-[600px]">
+                <h1 className="font-bold font-serif lg:text-5xl md:text-2xl text-lg md:mb-10 mb-4">
                   {item.title}
                 </h1>
                 <p className="text-[#717171] font-serif md:text-2xl text-sm">

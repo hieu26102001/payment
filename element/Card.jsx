@@ -4,7 +4,7 @@ import { cartState, addToCart } from "../states/cartState";
 import { useEffect, useState } from "react";
 import useWindowSize from "./../hooks/useWindowSize";
 import ShoppingCartSharpIcon from '@mui/icons-material/ShoppingCartSharp';
-export default function CardProduct({ title, price, image, decription ,item }) {
+export default function CardProduct({ title, price, newprice, image, decription ,item }) {
   const [cart ,setCart ] = useRecoilState(cartState)
   const handleAddtoCart = (product) => {
     const newCart = addToCart(cart , product);
@@ -31,7 +31,7 @@ export default function CardProduct({ title, price, image, decription ,item }) {
   },[size.width])
 
   return (
-    <div className="bg-[#F2F6FC] pt-2 py-3 justify-center md:block flex">
+    <div className="bg-[#F2F6FC] pt-2 py-3 justify-center md:block ">
       <div className = "justify-center flex">
         <img
           className= {` ${sizeImg} mb `}
@@ -47,7 +47,10 @@ export default function CardProduct({ title, price, image, decription ,item }) {
           {decription}
         </p>
         <div className="md:block flex justify-between">
+          <div className = "flex">
           <h3 className="text-[#2F88FF] text-2xl ml-4 mt-4 ">${price}</h3>
+          <s className = "text-gray-400  ml-4 mt-4"> ${newprice}</s>
+          </div>
           <div className="flex justify-center text-center">
             <button 
             onClick = {() => handleAddtoCart(item)}
