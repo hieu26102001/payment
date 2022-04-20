@@ -1,4 +1,4 @@
-import { atom } from "recoil";
+import { atom, useRecoilValue } from "recoil";
 export const cartState = atom({
   key: 'cart',
   default: [],
@@ -21,12 +21,6 @@ export const addToCart = (cart, product) => {
   });
   return newCart;
 };
-export const removetoCart = (cart , product) => {
-  const newCart = [...cart]
-  const foundIndex = cart.findIndex((x) => x.id === product.id)
-  if (foundIndex >= 0){
-    newCart.splice(foundIndex, 1)
-    return newCart;
-  }
 
-}
+
+
