@@ -70,7 +70,7 @@ export default function BasicTabs() {
       <ThemeProvider theme={theme}>
         <section className="bg-[#F3F5F7] pt-8 pb-20" >
           <Box className="max-w-[1400px] mx-auto pb-10" >
-            <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
+            <Tabs value={value} className="w-full" onChange={handleChange} aria-label="basic tabs example">
               <Tab label="Fiat and Spot" {...a11yProps(0)} className="capitalize" />
               <Tab label="History" {...a11yProps(1)} className="capitalize" />
             </Tabs>

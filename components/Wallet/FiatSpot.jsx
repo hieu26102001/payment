@@ -79,15 +79,15 @@ export default function FiatSpot() {
   },[])
   console.log(wallets)
   return (
-    <div className="px-5" >
-      <div className='bg-[#D9ECFF] px-5 py-6 flex justify-between items-center rounded my-8' >
-        <div className='ml-[2px] flex flex-col gap-8 ' >
-          <div>
+    <div className="sm:px-5" >
+      <div className='sm:bg-[#D9ECFF] px-5 py-6 flex flex-col sm:flex-row gap-8 sm:gap-0 justify-between sm:items-center rounded my-8' >
+        <div className='ml-[2px] flex flex-col gap-2 sm:gap-8 ' >
+          <div className='flex flex-wrap gap-2 sm:gap-0 items-center' >
             <span className='text-[#909399] mr-8' >{stats.title}</span>
-            <span className='text-sm text-[#909399]' >
+            <div className='text-sm text-[#909399]' >
               <span><VisibilityIcon /></span>
               <span className='ml-2' >Show</span>
-            </span>
+            </div>
           </div>
           <div className='flex items-center'>
             <FormattedNumber value={stats.value} suffix=" USDT" className="inline-block text-[#2F88FF] text-2xl font-semibold " />
@@ -110,13 +110,13 @@ export default function FiatSpot() {
               <th scope="col" className="px-6 py-3 tracking-wider w-80 text-right font-light">
                 Total
               </th>
-              <th scope="col" className="px-6 py-3 tracking-wider w-80 text-right font-light">
+              <th scope="col" className="hidden sm:table-cell c px-6 py-3 tracking-wider w-80 text-right font-light">
                 Available
               </th>
-              <th scope="col" className="px-6 py-3 tracking-wider w-80 text-right font-light">
+              <th scope="col" className="hidden sm:table-cell px-6 py-3 tracking-wider w-80 text-right font-light">
                 Locked
               </th>
-              <th scope="col" className="px-6 pr-[86px] py-3 tracking-wider w-80 text-right font-light">
+              <th scope="col" className="hidden sm:table-cell px-6 pr-[86px] py-3 tracking-wider w-80 text-right font-light">
                 Actions
               </th>
             </tr>
@@ -147,11 +147,11 @@ export default function FiatSpot() {
                   </a>
                 </td>
                 {mapTable.map((k, i) => (
-                  <td key={i} className={clsx("px-6 py-2 whitespace-nowrap text-right", coin[k] <= 0 ? "text-gray-400" : "text-primary-dark")}>
+                  <td key={i} className={clsx("px-6 py-2 whitespace-nowrap text-right", coin[k] <= 0 ? "text-gray-400" : "text-primary-dark",k!="total"?"hidden sm:table-cell":null)}>
                     <FormattedNumber value={coin[k]} options={{ minimumFractionDigits: 8 }} />
                   </td>
                 ))}
-                <td className="px-6 py-2 whitespace-nowrap text-right space-x-3">
+                <td className=" hidden sm:table-cell px-6 py-2 whitespace-nowrap text-right space-x-3">
                   <a className="text-[#2F88FF] hover:underline cursor-pointer">
                     Deposit
                   </a>

@@ -1,5 +1,5 @@
 import {
-  Checkbox, FormControl, FormControlLabel, MenuItem, TextField, RadioGroup, Radio, Dialog, FormLabel,
+  Checkbox, FormControl, FormControlLabel, MenuItem, TextField, RadioGroup, Radio, Dialog, FormLabel, Card,
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import * as EmailValidator from "email-validator";
@@ -16,6 +16,9 @@ import Layout from "../components/partials/layout";
 import { useRecoilState, useRecoilValue, useResetRecoilState } from "recoil";
 import { coinData, payMethodList, COIN_PAYMENT_STATE, OPEN_LIST_COIN_STATE, PAYMENT_METHOD_STATE, CURRENT_ACCESS_TOKEN, resetInvoiceState, NETWORK_STATE } from "../states/invoice-state";
 import jsCookie from "js-cookie";
+import { cartState } from "../states/cartState";
+import CardOrder from "../components/Invoice/CardOrder";
+import OrderReview from "../components/Invoice/OrderReview";
 
 const validEmail = (email) => {
   if (!email || email.trim() === "")
@@ -47,10 +50,7 @@ const validPhone = (phone) => {
 export default function Invoice() {
   const size = useWindowSize();
 
-  // const [payMethod, setPayMethod] = useState(payMethodList[0].value);
-  // const [payCoin, setPayCoin] = useState(coinData[0]);
-  // const [openPayMethod, setOpenPayMethod] = useState(false)
-
+  
   const [payMethod, setPayMethod] = useRecoilState(PAYMENT_METHOD_STATE);
   const [payCoin, setPayCoin] = useRecoilState(COIN_PAYMENT_STATE);
   const openListCoin = useRecoilValue(OPEN_LIST_COIN_STATE)
@@ -67,7 +67,7 @@ export default function Invoice() {
         resetCoinPayment()
         resetPaymentMethod()
   }
-
+  // console.log(cart)
   const handleOpenDialog = (setOpen) => {
     setOpen(true)
   }
@@ -204,12 +204,7 @@ export default function Invoice() {
           </div>
 
           <div className="md:col-span-2 flex flex-col gap-5">
-            <Box >
-              <AccordionPayment label="order review" subtext="3 products" />
-            </Box>
-            {/* <Box className="md:py-0 py-3" >
-              <AccordionPayment label="discount codes" />
-            </Box> */}
+            <OrderReview/>
             {/* <AccordionPayment label="billing summary"> */}
             <BillingSummary>
               {/* </AccordionPayment> */}

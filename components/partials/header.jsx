@@ -84,7 +84,7 @@ export default function Header({ styleCustom, colorLogo, isLogin = false }) {
                                 return (
                                     <>
                                         {
-                                            !token ?
+                                            token ?
                                                 <>
                                                     {(id < 2) ?
 
