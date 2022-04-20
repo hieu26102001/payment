@@ -11,7 +11,7 @@ export default function Footer() {
     const size = useWindowSize()
     const [mobile, setMobile] = useState(false)
     useEffect(() => {
-        if (size.width <= 768)
+        if (size.width <= 1024)
             setMobile(true)
         else setMobile(false)
     }, [size.width])
