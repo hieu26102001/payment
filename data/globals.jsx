@@ -81,7 +81,25 @@ export const blog = [
       "Shop and pay with crypto anywhere in the world The Binance Card does everything a regular payment card does, and more.",
   },
   {id:1,
-    image: "../Index/Blog2.png",
+    image: "../Index/Blog3.png",
+    title: "Send and spend crypto without fees",
+    decription:
+      "Shop and pay with crypto anywhere in the world The Binance Card does everything a regular payment card does, and more.",
+  },
+  {id:1,
+    image: "../Index/Blog3.png",
+    title: "Send and spend crypto without fees",
+    decription:
+      "Shop and pay with crypto anywhere in the world The Binance Card does everything a regular payment card does, and more.",
+  },
+  {id:1,
+    image: "../Index/Blog3.png",
+    title: "Send and spend crypto without fees",
+    decription:
+      "Shop and pay with crypto anywhere in the world The Binance Card does everything a regular payment card does, and more.",
+  },
+  {id:1,
+    image: "../Index/Blog3.png",
     title: "Send and spend crypto without fees",
     decription:
       "Shop and pay with crypto anywhere in the world The Binance Card does everything a regular payment card does, and more.",

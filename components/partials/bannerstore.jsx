@@ -10,7 +10,7 @@ export default function BannerStore() {
   const [sizeBtn, setSizeBtn] = useState("w-[351px] h-[61px]");
   useEffect(() => {
     if (size.width <= 1180) {
-      setTextSize("xs:text-2xl md:text-[32px] md:leading-normal");
+      setTextSize("xs:text-xl md:text-[28px] md:leading-normal");
       setStyleContent("absolute md:top-1 md:w-[440px] w-[220px]");
       setSizeBtn("w-[230px] h-[50px]");
     } else {
@@ -24,7 +24,7 @@ export default function BannerStore() {
     <div className="  bg-[#D6EBFF]   ">
       <div className="max-w-[1600px] mx-auto">
         <div
-          className={`md:ml-16 ml-4 ${styleContent} pt-16 sm:pt-[70px] md:pt-16  `}
+          className={`md:ml-16 ml-4 ${styleContent} pt-16  sm:pt-[70px] md:pt-16  `}
         >
           <h1
             className={`${textSize} font-bold text-[#2F88FF] mb-4  font-serif leading-tight`}
