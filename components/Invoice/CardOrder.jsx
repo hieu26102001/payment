@@ -33,21 +33,23 @@ export default function CardOrder({ card }) {
 
   return (
     <li>
-      <div className="flex gap-4" >
-        <img src={product.image} className="w-28 sm:w-[139px] md:w-20 lg:w-[139px] lg:h-[139px]" />
-        <div className="flex flex-col lg:gap-5" >
-          <div>{product.decription}</div>
-          <div className="flex gap-2" >
-            <FormattedNumber value={product.newPrice} currency="USD" className="text-[#2F88FF]" options={{ minimumFractionDigits: 2 }} />
-            <FormattedNumber value={product.oldPrice} currency="USD" className="text-[#B2BCCA]" options={{ minimumFractionDigits: 2 }} />
-          </div>
-          <div className="flex gap-7" >
-            <button onClick={() =>decreaseProduct(product)} className="w-6 h-6 border border-[#DCDFE6] rounded" >-</button>
-            <span>{quantity}</span>
-            <button onClick={handleAddtoCart} className="w-6 h-6 border border-[#DCDFE6] rounded" >+</button>
+      <div className="flex w-full justify-between gap-4" >
+        <div className="flex gap-4" >
+          <img src={product.image} className=" w-24 sm:w-[139px]" />
+          <div className="flex flex-col gap-[6px] sm:gap-5" >
+            <div className="text-sm xl:text-base" >{product.decription}</div>
+            <div className="flex gap-2" >
+              <FormattedNumber value={product.newPrice} currency="USD" className="text-sm xl:text-base text-[#2F88FF]" options={{ minimumFractionDigits: 2 }} />
+              <FormattedNumber value={product.oldPrice} currency="USD" className="text-sm xl:text-base text-[#B2BCCA]" options={{ minimumFractionDigits: 2 }} />
+            </div>
+            <div className="flex gap-4 sm:gap-7" >
+              <button onClick={() =>decreaseProduct(product)} className="w-6 h-6 border border-[#DCDFE6] rounded" >-</button>
+              <span>{quantity}</span>
+              <button onClick={handleAddtoCart} className="w-6 h-6 border border-[#DCDFE6] rounded" >+</button>
+            </div>
           </div>
         </div>
-        <CloseIcon onClick={()=> removeProduct(product)} className="top-5 right-3" />
+        <CloseIcon onClick={()=> removeProduct(product)} className="top-5 right-3 cursor-pointer" />
       </div>
     </li>
   )
