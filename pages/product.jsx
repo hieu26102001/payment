@@ -35,7 +35,7 @@ export default function Product() {
                   title={item.title}
                   price={item.newPrice}
                   decription={item.decription}
-                  newprice = {item.newprice}
+                  newprice = {item.oldPrice}
                   item={item}
                 ></CardProduct>
               </div>
